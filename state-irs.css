@@ -1,0 +1,1029 @@
+/* --- Reset & Variables --- */
+:root {
+  --font-family: "Inter", sans-serif;
+  --color-text-main: #121212;
+  --color-text-light: #5F5C64;
+  --color-dark-green: #4A6117;
+  --color-darker-green: #4A6117;
+  --color-lime-accent: #dcee60;
+  --color-cream-bg: #EDEFE8;
+  --color-yellow-cta: #E8EC67;
+  --color-border: #eeeeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background: #fff;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utilities */
+.state_irs_container {
+  max-width: 1240px;
+  margin: 0 96px;
+  padding: 0 0;
+}
+
+.section-padding {
+  padding: 64px 0;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-cream {
+  background-color: var(--color-cream-bg);
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+/* --- Navigation --- */
+.navbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.bag-icon {
+  width: 16px;
+  height: 12px;
+  background: #000;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  margin: 0 1px;
+}
+
+.bag-icon::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-dark-green);
+  border-radius: 50%;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  margin: auto 10px;
+  white-space: nowrap;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.login-link {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-nav {
+  background: #ffffff;
+  color: var(--color-dark-green);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- 1. Hero Section (State IRS) --- */
+.hero-irs {
+  background: url("./assets/green-lime-half-bg.png") no-repeat center/cover;
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.hero-gradient-irs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  /* Gradient: Yellow/Green vertical stripes */
+  background: linear-gradient(90deg,
+      rgba(248, 250, 227, 0) 0%,
+      rgba(220, 240, 150, 0.3) 20%,
+      rgba(200, 230, 100, 0.6) 50%,
+      rgba(180, 210, 50, 0.8) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  width: 710px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+.crumb-arrow {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 4px;
+  fill: #666;
+}
+
+h1 {
+  color: #121212;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -2px;
+}
+
+.hero-description {
+  font-size: 17px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  background: var(--color-dark-green);
+  color: #fff !important;
+  padding: 16px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* --- 2. Intro Section (Equal Height) --- */
+.equal-height-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.text-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.text-content p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.icon-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 24px;
+  margin-top: 8px;
+}
+
+.icon-list-grid li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #121212;
+}
+
+.icon-circle-lime {
+  background: #E8EC67;
+  border-radius: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle-inner {
+  background: #4A6117;
+  border-radius: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle-inner svg {
+  width: 16px;
+  height: 16px;
+  color: #E8EC67;
+}
+
+.image-content {
+  width: 506px;
+  height: auto;
+}
+
+.image-content img {
+  border-radius: 8px;
+  width: 506px;
+  height: auto;
+  align-self: stretch;
+  object-fit: cover;
+}
+
+/* --- 3. Directory Tabs --- */
+.state-irs-bg {
+  background: url("./assets/state-irs-bg.png") no-repeat center/cover;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+
+
+.irs-header h2 {
+  color: #121212;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.irs-tabs {
+  width: fit-content;
+  display: flex;
+  background: #fff;
+  padding: 8px;
+  flex-wrap: nowrap;
+  border-radius: 8px;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.tab-btn {
+  padding: 10px 24px;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+  color: #121212;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+.tab-btn:hover {
+  background: #f0f0f0;
+}
+
+.tab-btn.active {
+  background: var(--color-darker-green);
+  color: #F0F299 !important;
+  border-color: var(--color-darker-green);
+}
+
+/* Tab Content Visibility Logic */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab-content.active-tab {
+  display: block;
+  opacity: 1;
+}
+
+/* Default handled by .active-tab */
+
+.sites-header h2 {
+  color: #121212;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.sites-header p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.irs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.irs-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.irs-logo img {
+  height: 40px;
+  margin-bottom: 16px;
+  object-fit: contain;
+}
+
+.irs-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+  line-height: 1.4;
+}
+
+.irs-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.btn-outline {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-dark-green);
+  color: var(--color-dark-green);
+}
+
+/* --- 4. What You Can Do (Grid 3 reused) --- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card-clean {
+  border: 0.4px solid #4A6117;
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+}
+
+.icon-box-dark {
+  width: 40px;
+  height: 40px;
+  background: var(--color-dark-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.icon-box-dark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.feature-card-clean h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* --- 5. CTA --- */
+.cta-banner {
+  background: var(--color-yellow-cta);
+  border-radius: 24px;
+  padding: 48px 64px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  color: #121212;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.cta-banner p {
+  width: 810px;
+  color: #121212;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0 auto 32px;
+}
+
+.btn-dark {
+  background: var(--color-dark-green);
+  color: #fff !important;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 15px;
+}
+
+/* --- Footer --- */
+.footer-section {
+  background: var(--color-cream-bg);
+  padding: 80px 0 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links-grid h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-links-grid a {
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-bottom: 0px;
+}
+
+.nl-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .equal-height-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .image-content {
+    height: auto;
+  }
+
+  .irs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links-grid {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nl-form {
+    width: 100%;
+  }
+
+  .nl-form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+/* Mobile Screens */
+
+@media (max-width: 600px) {
+
+
+  .state_irs_container {
+    max-width: 100%;
+    padding: 0 24px;
+    margin: 0;
+  }
+
+  .cta-banner {
+    border-radius: 16px;
+    padding: 32px 32px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .cta-banner h2 {
+    color: #121212;
+    text-align: center;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+
+  .cta-banner p {
+    width: 100%;
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0 auto 24px;
+  }
+
+  .btn-dark {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    width: 100%;
+    padding: 12px 0px;
+    border-radius: 8px;
+  }
+
+  .section-padding {
+    padding: 24px 0px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+
+  .feature-card-clean {
+    border-radius: 16px;
+    border: 0.4px solid #4A6117;
+    padding: 24px;
+  }
+
+  .icon-box-dark {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+
+
+  .icon-box-dark svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .feature-card-clean h3 {
+    color: #121212;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0;
+    font-size: 16px;
+  }
+
+  .sites-header p {
+    color: #5F5C64;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  .sites-header h2 {
+    color: #121212;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .irs-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    height: 689px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .irs-grid::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  .irs-logo img {
+    margin-bottom: 12px;
+  }
+
+  .irs-card {
+    border-radius: 16px;
+  }
+
+  .irs-card h3 {
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin-bottom: 8px;
+  }
+
+  .irs-card p strong {
+    color: #121212;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+
+  .irs-card p {
+    color: #5F5C64;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+  }
+
+  .btn-outline {
+    padding: 8px 0px;
+    border-radius: 8px;
+    border: 1px solid #4A6117;
+    color: #4A6117;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  .irs-tabs {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+    gap: 0px;
+    padding: 8px;
+    margin: 0 auto 32px;
+    justify-content: flex-start;
+  }
+
+  .tab-btn {
+    margin-right: 0px;
+    flex-shrink: 0;
+  }
+
+  .irs-header h2 {
+    color: #121212;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .equal-height-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .image-content {
+    width: 100%;
+  }
+
+  .hero-irs {
+    background: url(./assets/green-lime-half-bg.png) no-repeat center / cover;
+    position: relative;
+    padding: 42px 0;
+    overflow: hidden;
+  }
+
+
+  .hero-content {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .btn-hero-primary {
+    padding: 12px 0;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    margin-top: 20px;
+  }
+
+
+  .hero-description {
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  h1 {
+    color: #121212;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -2px;
+  }
+
+
+  .icon-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 0px;
+  }
+
+
+  .icon-list-grid li {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: #121212;
+  }
+
+  .icon-list-grid li span {
+    color: #121212;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  .icon-circle-lime {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+  }
+
+  .icon-circle-inner {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+  }
+
+  .icon-circle-inner svg {
+    width: 12px;
+    height: 12px;
+  }
+
+
+  .text-content p {
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin-bottom: 24px;
+  }
+
+
+  .text-content h2 {
+    color: #121212;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .hero-buttons .btn-hero-primary {
+    width: 100%;
+    display: block;
+  }
+}

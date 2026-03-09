@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - WorkMerate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="auth-visual auth-visual--login" aria-hidden="true">
+        <a href="index.html" class="back-link">
+          <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+          <span>Back to Website</span>
+        </a>
+      </section>
+
+      <section class="auth-panel">
+        <div class="auth-card">
+          <img src="./assets/Logo.png" alt="WorkMerate" class="brand-mark" />
+          <h1 class="auth-title">Login to your account</h1>
+
+          <div class="stack-md">
+            <a href="#" class="social-button" href="login.html" href="signup.html" href="signup.html">
+              <span class="provider-icon provider-icon--google">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <g clip-path="url(#clip0_1578_9750)">
+                    <path d="M23.7643 12.2763C23.7643 11.4605 23.6982 10.6404 23.5571 9.83789H12.2383V14.4589H18.72C18.451 15.9492 17.5868 17.2676 16.3213 18.1054V21.1037H20.1883C22.4591 19.0137 23.7643 15.9272 23.7643 12.2763Z" fill="#4285F4"/>
+                    <path d="M12.243 24.0013C15.4795 24.0013 18.2089 22.9387 20.1975 21.1044L16.3305 18.106C15.2546 18.838 13.8657 19.2525 12.2474 19.2525C9.11681 19.2525 6.46239 17.1404 5.50998 14.3008H1.51953V17.3917C3.55664 21.4439 7.70583 24.0013 12.243 24.0013Z" fill="#34A853"/>
+                    <path d="M5.50082 14.3007C4.99816 12.8103 4.99816 11.1965 5.50082 9.70618V6.61523H1.51478C-0.187219 10.006 -0.187219 14.0009 1.51478 17.3916L5.50082 14.3007Z" fill="#FBBC04"/>
+                    <path d="M12.243 4.74966C13.9539 4.7232 15.6074 5.36697 16.8464 6.54867L20.2724 3.12262C18.103 1.0855 15.2237 -0.034466 12.243 0.000808666C7.70583 0.000808666 3.55664 2.55822 1.51953 6.61481L5.50557 9.70575C6.45357 6.86173 9.1124 4.74966 12.243 4.74966Z" fill="#EA4335"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1578_9750">
+                      <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <span>Continue with Google</span>
+            </a>
+            <a href="Login.html" class="social-button">
+              <span class="provider-icon provider-icon--microsoft" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <g clip-path="url(#clip0_1578_9757)">
+                    <path d="M11.4062 11.4062H0V0H11.4062V11.4062Z" fill="#F1511B"/>
+                    <path d="M23.9998 11.4062H12.5938V0H23.9998V11.4062Z" fill="#80CC28"/>
+                    <path d="M11.4059 24.0009H0V12.5947H11.4059V24.0009Z" fill="#00ADEF"/>
+                    <path d="M23.9998 24.0009H12.5938V12.5947H23.9998V24.0009Z" fill="#FBBC09"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1578_9757">
+                      <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <span>Sign in with Microsoft</span>
+            </a>
+            <a href="#" class="social-button" href="login.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18.8473 23.0371C17.5408 24.3036 16.1143 24.1036 14.7412 23.5037C13.288 22.8904 11.9548 22.8638 10.4217 23.5037C8.50195 24.3303 7.48874 24.0903 6.34222 23.0371C-0.163623 16.3313 0.796256 6.11923 8.18199 5.74594C9.98176 5.83926 11.2349 6.73248 12.2881 6.81247C13.8613 6.49251 15.3678 5.57263 17.0475 5.69261C19.0606 5.85259 20.5804 6.65249 21.5803 8.09231C17.4208 10.5853 18.4074 16.0646 22.2202 17.5978C21.4603 19.5975 20.4738 21.5839 18.834 23.0504L18.8473 23.0371ZM12.1548 5.66595C11.9548 2.69299 14.3679 0.23997 17.1409 0C17.5275 3.43957 14.0213 5.99924 12.1548 5.66595Z" fill="black"/>
+              </svg>
+              <span>Sign in with Apple</span>
+            </a>
+          </div>
+
+          <div class="divider">Or</div>
+
+          <form class="auth-form" action="index.html">
+            <input class="text-input" type="email" placeholder="Email Address" />
+            <input class="text-input" type="password" placeholder="Password" />
+            <button class="button button--primary button--full" type="submit">Login</button>
+          </form>
+
+          <p class="auth-footer-note">
+            Don't have an account?
+            <a href="signup.html" class="inline-link">Sign Up</a>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

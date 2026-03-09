@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Your Email - WorkMerate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="auth-visual auth-visual--signup" aria-hidden="true">
+        <a href="index.html" class="back-link">
+          <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+          <span>Back to Website</span>
+        </a>
+      </section>
+
+      <section class="auth-panel">
+        <div class="auth-card">
+          <img src="./assets/Logo.png" alt="WorkMerate" class="brand-mark" />
+          <h1 class="auth-title">Check your email</h1>
+          <p class="auth-subtitle auth-subtitle--compact">
+            we've sent your verification code to <strong>sholaw@delefinance.com</strong>
+          </p>
+
+          <form action="create-profile.html">
+            <div class="otp-row" aria-label="Verification code">
+              <input
+                class="otp-box otp-box--active"
+                type="text"
+                name="otp-1"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                maxlength="1"
+                placeholder="6"
+                aria-label="Verification code digit 1"
+              />
+              <input
+                class="otp-box"
+                type="text"
+                name="otp-2"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="*"
+                aria-label="Verification code digit 2"
+              />
+              <input
+                class="otp-box"
+                type="text"
+                name="otp-3"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="*"
+                aria-label="Verification code digit 3"
+              />
+              <input
+                class="otp-box"
+                type="text"
+                name="otp-4"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="*"
+                aria-label="Verification code digit 4"
+              />
+            </div>
+
+            <p class="helper-text helper-text--center">
+              Didn't get the email, edit your email address or
+              <a href="signup.html" class="inline-link">Resend Code</a>
+            </p>
+
+            <div class="stack-lg" style="margin-top: 18px;">
+              <button class="button button--primary button--fit" type="submit" style="margin: 0 auto;">
+              Verify
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

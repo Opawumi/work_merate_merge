@@ -1,0 +1,1411 @@
+:root {
+  /* Colors extracted from images */
+  --wm-green-dark: #4d6622;
+  --wm-green-hover: #3b501a;
+  --wm-lime-light: #eff6a3;
+  /* Hero yellow */
+  --wm-lime-gradient-start: #f3fcad;
+  --wm-lime-gradient-end: #e6b948;
+  /* Orange-ish tint in hero corner */
+  --wm-bg-light: #f9f9f7;
+  --wm-text-main: #111827;
+  --wm-text-body: #4b5563;
+  --wm-border: #e5e7eb;
+  --wm-font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --wm-nav-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--wm-font-sans);
+  color: var(--wm-text-main);
+  line-height: 1.5;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility Classes */
+.wm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.wm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+}
+
+.wm-btn-primary {
+  background-color: #ffffff;
+  color: var(--wm-green-dark);
+}
+
+.wm-btn-primary:hover {
+  background-color: #f0f0f0;
+}
+
+.wm-btn-text {
+  background: transparent;
+  color: var(--wm-text-main);
+  padding: 12px 16px;
+  font-family: var(--Family-Body, Inter);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.wm-btn-text:hover {
+  opacity: 0.7;
+}
+
+/* --- 1. NAVIGATION --- */
+.wm-nav {
+  height: var(--wm-nav-height);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+}
+
+.wm-nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wm-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.5px;
+}
+
+.wm-logo span.green {
+  color: var(--wm-green-dark);
+}
+
+.wm-logo-icon {
+  margin: 0 2px;
+  display: flex;
+}
+
+/* Desktop Menu */
+.wm-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: auto 10px;
+  white-space: nowrap;
+}
+
+.wm-menu a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wm-menu a:hover {
+  color: var(--wm-green-dark);
+}
+
+.wm-chevron {
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+}
+
+.wm-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+.wm-nav-login {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Mobile Toggle */
+.wm-mobile-toggle,
+.wm-mobile-menu-check {
+  display: none;
+}
+
+/* --- 2. HERO SECTION --- */
+.wm-hero {
+  /* Simulating the yellow gradient background */
+  background: url("./assets/erp-hero.png");
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.wm-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.wm-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--wm-text-main);
+  margin-bottom: 24px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.wm-breadcrumbs span:not(.svg-container) {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.wm-breadcrumbs span.erp-pos-text {
+  font-weight: 600;
+}
+
+.svg-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.svg-container svg {
+  width: 14px;
+  height: 14px;
+}
+.wm-hero-content{
+  width: 620px;
+}
+.wm-hero-content h1 {
+  font-size: 37px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.wm-hero-content p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.wm-hero-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Dashboard UI styling */
+.wm-hero-img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Adding visual code/graph lines with CSS to simulate dashboard */
+.wm-dash-ui {
+  width: 100%;
+  height: 100%;
+  background: #111;
+  border-radius: 8px;
+  position: relative;
+}
+
+.wm-dash-header {
+  height: 10%;
+  border-bottom: 1px solid #333;
+}
+
+.wm-dash-body {
+  display: flex;
+  height: 90%;
+}
+
+.wm-dash-sidebar {
+  width: 15%;
+  border-right: 1px solid #333;
+}
+
+.wm-dash-main {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.wm-dash-card {
+  background: #222;
+  border-radius: 4px;
+}
+
+/* Decorative line */
+.step-line {
+  height: 1px;
+  background: #f0f299;
+  margin-bottom: 0.8rem;
+  border-radius: 2px;
+}
+
+/* --- 3. WHAT WE DO --- */
+.wm-section {
+  padding: 30px 0;
+}
+
+.wm-center-header {
+  text-align: center;
+  max-width: 1080px;
+  margin: 0 auto 60px auto;
+}
+
+.wm-center-header h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.wm-center-header p {
+  color: var(--wm-text-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+
+  margin: 0 auto;
+
+}
+
+.wm-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.wm-card {
+  border: 1px solid var(--wm-border);
+  border-radius: 16px;
+  padding: 24px;
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.wm-card:hover {
+  transform: translateY(-4px);
+}
+
+.wm-icon-sq {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.bg-yellow {
+  background-color: var(--wm-lime-light);
+}
+
+.bg-green {
+  background-color: #4A6117;
+}
+
+.bg-white {
+  border: 1px solid #eee;
+}
+
+.wm-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.wm-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.wm-pathway-image {
+  width: 512px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.pathway-image-reverse {
+  display: flex;
+  justify-content: end;
+}
+
+/* --- 4. INTEGRATION PATHWAYS --- */
+.wm-pathways-header {
+  padding-top: 10px;
+}
+
+.wm-bg-offset {
+  background-color: #EDEFE8;
+}
+
+.wm-pathways-section {
+  padding: 40px 0;
+  background-color: #FDFDF0;
+  position: relative;
+  z-index: 1;
+}
+
+.wm-pathways-section::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background-color: #FDFDF0;
+  z-index: -1;
+}
+
+.wm-pathway-row {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin: 48px auto;
+}
+
+.wm-pathway-row:first-of-type {
+  margin-top: 0;
+}
+
+.wm-pathway-row:last-child {
+  margin-bottom: 0;
+}
+
+.wm-pathway-row.reverse,
+.wm-pathway-row.wm-reverse {
+  flex-direction: row-reverse;
+  padding-bottom: 60px;
+}
+
+.wm-pathway-text {
+  flex: 1;
+}
+
+.wm-pathway-text h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--wm-text-main);
+  line-height: 22px;
+  margin-top: 40px;
+}
+
+.wm-pathway-desc {
+  color: var(--wm-text-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.wm-pathway-content {
+  flex: 1;
+}
+
+.wm-pathway-visual {
+  flex: 1;
+}
+
+.wm-pathway-content h3 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.wm-pathway-content p {
+  color: var(--wm-text-body);
+  margin-bottom: 24px;
+}
+
+.wm-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.wm-check-icon {
+  background: #dcfce7;
+  color: var(--wm-green-dark);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.wm-img-placeholder {
+  width: 100%;
+  height: 320px;
+  background: #e5e7eb;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.wm-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- 5. HOW IT WORKS --- */
+.wm-steps-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.wm-step {
+  position: relative;
+}
+
+.wm-step-num {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  /* Very light gray */
+  line-height: 1;
+  position: relative;
+  z-index: 0;
+}
+
+.wm-step-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--wm-green-dark);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.wm-step h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.wm-step p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --- 6. WHY CHOOSE (Grid) --- */
+.wm-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.wm-ben-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 7. CTA --- */
+.wm-cta-wrapper {
+  padding: 0 20px 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wm-cta-box {
+  background-color: #E8EC67;
+  border-radius: 24px;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.wm-cta-box h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+.wm-cta-box p {
+  max-width: 700px;
+  margin: 0 auto 32px auto;
+  color: #333;
+}
+
+.wm-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.wm-btn-primary {
+  padding: 14px 32px;
+  border-radius: 8px;
+  background-color: #4A6117;
+  color: #fff !important;
+}
+
+.wm-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+  margin: 32px 0;
+}
+
+.wm-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wm-feature-item span {
+  font-size: 14.5px;
+}
+
+/* Circular Checkmark Button */
+.circular-check-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e2ec60;
+  /* Matches the bright lime/yellow circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.check-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.feature-grid-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111827;
+  padding-top: 2px;
+}
+
+/* Smaller version */
+.circular-check-button.small {
+  width: 36px;
+  height: 36px;
+}
+
+.circular-check-button.small .check-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+}
+
+/* Larger version */
+.circular-check-button.large {
+  width: 64px;
+  height: 64px;
+}
+
+.circular-check-button.large .check-icon {
+  width: 38px;
+  height: 38px;
+  font-size: 1.5rem;
+}
+
+/* Hover effect */
+.circular-check-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.circular-check-button:hover .check-icon {
+  background: #3a5234;
+  transition: background 0.3s ease;
+}
+
+/* --- 8. FOOTER --- */
+.wm-footer {
+  background: #edefe9;
+  padding: 60px 0 20px 0;
+  font-size: 0.9rem;
+}
+
+.wm-foot-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.wm-foot-brand h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.wm-foot-brand p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.wm-contact p {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.wm-contact strong {
+  color: #111;
+}
+
+.wm-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.wm-socials svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.wm-foot-col h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.wm-foot-col li {
+  margin-bottom: 12px;
+}
+
+.wm-foot-col a {
+  color: #555;
+}
+
+.wm-foot-col a:hover {
+  color: var(--wm-green-dark);
+}
+
+.wm-foot-divider {
+  border-top: 1px solid #d1d6cc;
+  margin: 20px 0;
+}
+
+.wm-foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.wm-newsletter {
+  background: #edefe9;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wm-news-input {
+  display: flex;
+  gap: 10px;
+}
+
+.wm-news-input input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+/* --- INTRO PATHWAYS GRID --- */
+.wm-intro-section {
+  padding: 40px 0 60px;
+}
+
+.wm-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.intro-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--wm-text-main);
+  letter-spacing: -0.02em;
+}
+
+.intro-card p {
+  font-size: 0.95rem;
+  color: var(--wm-text-body);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.intro-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+  margin-bottom: 32px;
+}
+
+.intro-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkmark-circle {
+  width: 24px;
+  height: 24px;
+  background: #A3C93E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.feature-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--wm-text-main);
+  width: 80px;
+}
+
+.intro-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.intro-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* --- PATHWAY TABS --- */
+.wm-pathway-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.wm-pathway-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1.5px solid var(--wm-border);
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--wm-text-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.wm-pathway-tab:hover {
+  border-color: var(--wm-green-dark);
+  color: var(--wm-green-dark);
+  background: #f6f9ee;
+}
+
+.wm-pathway-tab.active {
+  background: var(--wm-green-dark);
+  border-color: var(--wm-green-dark);
+  color: #fff;
+}
+
+.wm-pathway-tab .tab-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.wm-pathway-tab:not(.active) .tab-num {
+  background: #eef2e6;
+  color: var(--wm-green-dark);
+}
+
+/* Floating Chat */
+.wm-chat-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet breakpoint */
+@media (max-width: 968px) {
+
+  /* Hero */
+  .wm-hero {
+    padding: 40px 0;
+  }
+
+  .wm-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .wm-hero-content h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .wm-hero-content p {
+    max-width: 100%;
+  }
+
+  .wm-hero-grid>img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* What We Do cards */
+  .wm-cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* Steps */
+  .wm-steps-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* Benefits */
+  .wm-benefits-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* Intro grid */
+  .wm-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Pathway rows */
+  .wm-pathway-row,
+  .wm-pathway-row.reverse,
+  .wm-pathway-row.wm-reverse {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .wm-pathway-image {
+    width: 100%;
+  }
+
+  .wm-pathway-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Feature grids */
+  .wm-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .intro-features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .feature-text {
+    width: auto;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 640px) {
+
+  /* Hero */
+  .wm-hero {
+    padding: 24px 0 32px;
+  }
+
+  .wm-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .wm-breadcrumbs {
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+  }
+
+  .wm-breadcrumbs span:not(.svg-container) {
+    font-size: 13px;
+  }
+
+  .wm-hero-content h1 {
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .wm-hero-content p {
+    font-size: 0.82rem;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .wm-hero-actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .wm-hero-actions .wm-btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .wm-hero-actions .wm-btn-text {
+    padding: 10px 16px;
+  }
+
+  .wm-hero-grid>img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* Section spacing */
+  .wm-section {
+    padding: 32px 0;
+  }
+
+  .wm-center-header {
+    margin-bottom: 32px;
+  }
+
+  .wm-center-header h2 {
+    font-size: 1.45rem;
+  }
+
+  .wm-center-header p {
+    font-size: 0.9rem;
+  }
+
+  /* What We Do cards */
+  .wm-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .wm-card {
+    padding: 20px;
+  }
+
+  /* Pathways section */
+  .wm-pathways-section {
+    padding: 32px 0;
+  }
+
+  .wm-pathways-section::before {
+    top: -60px;
+    height: 60px;
+  }
+
+  .wm-pathways-header h2 {
+    font-size: 1.4rem;
+  }
+
+  /* Intro grid */
+  .wm-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .intro-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .intro-card p {
+    font-size: 0.88rem;
+  }
+
+  .intro-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .feature-text {
+    width: auto;
+  }
+
+  .intro-card .wm-btn-primary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    align-self: stretch !important;
+  }
+
+  .intro-image-wrapper {
+    border-radius: 10px;
+  }
+
+  /* Pathway rows */
+  .wm-pathway-row,
+  .wm-pathway-row.reverse,
+  .wm-pathway-row.wm-reverse {
+    flex-direction: column;
+    gap: 24px;
+    margin: 32px auto;
+    padding-bottom: 0;
+  }
+
+  .wm-pathway-row.wm-reverse {
+    padding-bottom: 0;
+  }
+
+  .wm-pathway-image {
+    width: 100%;
+  }
+
+  .wm-pathway-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .wm-pathway-text h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    line-height: 1.3;
+  }
+
+  .wm-pathway-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .wm-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .wm-feature-item span {
+    font-size: 13.5px;
+  }
+
+  .wm-pathway-text .wm-btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Steps row */
+  .wm-steps-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .wm-step-num {
+    font-size: 2.5rem;
+  }
+
+  .wm-step h4 {
+    font-size: 1rem;
+  }
+
+  .wm-step p {
+    font-size: 0.85rem;
+  }
+
+  /* Benefits (Why Choose) */
+  .wm-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .wm-ben-card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .wm-ben-card h4 {
+    font-size: 1rem;
+  }
+
+  .wm-ben-card p {
+    font-size: 0.85rem;
+  }
+
+  /* CTA */
+  .wm-cta-wrapper {
+    padding: 32px 16px !important;
+  }
+
+  .wm-cta-box {
+    padding: 40px 20px;
+    border-radius: 16px;
+  }
+
+  .wm-cta-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .wm-cta-box p {
+    font-size: 0.88rem;
+  }
+
+  .wm-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .wm-cta-box .wm-btn {
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .cta_bt {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #4A6117 !important;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  /* Circular check buttons */
+  .circular-check-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Nav (already handled by shared) */
+  .wm-menu,
+  .wm-nav-actions {
+    display: none;
+  }
+
+  .wm-mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .wm-mobile-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #000;
+  }
+
+  /* Footer */
+  .wm-foot-top {
+    grid-template-columns: 1fr;
+  }
+
+  .wm-foot-bottom,
+  .wm-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .wm-news-input {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .wm-news-input input,
+  .wm-news-input button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wm-hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .wm-center-header h2,
+  .wm-pathways-header h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* =============================================
+   ALIGNMENT OVERRIDE — match shared .container
+   (navbar & footer use max-width:1440px / 80px)
+   ============================================= */
+.wm-container,
+.wm-cta-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+
+}
+
+.three {
+  /* background moved to .wm-pathways-section so it spans full width */
+}
+
+.wm-cta-wrapper {
+  padding: 80px;
+}
+
+.cta_bt {
+  margin-left: 20px;
+  background-color: #E8EC67;
+  border: 1px solid #333;
+  color: #4A6117;
+}
+
+@media (max-width: 1100px) {
+
+  .wm-container,
+  .wm-cta-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .wm-container,
+  .wm-cta-wrapper {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

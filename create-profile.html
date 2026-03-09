@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Profile - WorkMerate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="auth-visual auth-visual--signup" aria-hidden="true">
+        <a href="index.html" class="back-link">
+          <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+          <span>Back to Website</span>
+        </a>
+      </section>
+
+      <section class="auth-panel">
+        <div class="auth-card auth-card--wide">
+          <img src="./assets/Logo.png" alt="WorkMerate" class="brand-mark" />
+          <h1 class="auth-title">Create your profile</h1>
+          <p class="auth-subtitle">
+            Please enter your business or company details in the fields below.
+          </p>
+
+          <form class="auth-form" action="secure-account.html">
+            <input class="text-input" type="text" placeholder="Name" />
+            <input class="text-input" type="tel" placeholder="Phone Number" />
+            <input class="text-input" type="text" placeholder="Address" />
+
+            <div class="actions-between">
+              <a href="check-email.html" class="button button--secondary">Back</a>
+              <button class="button button--primary" type="submit">Proceed</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

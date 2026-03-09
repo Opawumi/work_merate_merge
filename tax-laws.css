@@ -1,0 +1,897 @@
+/* --- Reset & Variables --- */
+:root {
+  --font-family: "Inter", sans-serif;
+  --color-text-main: #121212;
+  --color-text-light: #5F5C64;
+  --color-dark-green: #4A6117;
+  --color-darker-green: #4A6117;
+  --color-lime-accent: #dcee60;
+  --color-cream-bg: #EDEFE8;
+  --color-peach-bg: #fcefe9;
+  --color-lines: #d97e4a;
+  --color-yellow-cta: #E8EC67;
+  --color-border: #eeeeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background: #fff;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utilities */
+.tax_laws_container {
+  max-width: 1240px;
+  margin: 0 96px;
+  padding: 0 0;
+}
+
+.section-padding {
+  padding: 64px 0;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-cream {
+  background-color: var(--color-cream-bg);
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+/* --- Navigation --- */
+.navbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.bag-icon {
+  width: 16px;
+  height: 12px;
+  background: #000;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  margin: 0 1px;
+}
+
+.bag-icon::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-dark-green);
+  border-radius: 50%;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  margin: auto 10px;
+  white-space: nowrap;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.login-link {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-nav {
+  background: #ffffff;
+  color: var(--color-dark-green);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- 1. Hero Section (Tax Laws) --- */
+.hero-laws {
+  background: url("./assets/productivity-manage-hero.png") no-repeat center/cover;
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.hero-gradient-laws {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Starburst pattern matching the image */
+  background: repeating-conic-gradient(from 0deg at 100% 120%,
+      transparent 0deg,
+      transparent 10deg,
+      var(--color-lines) 10deg,
+      var(--color-lines) 10.5deg);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  width: 710px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.hero-content h1 {
+  color: #121212;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -2px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+.crumb-arrow {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 4px;
+  fill: #666;
+}
+
+
+.hero-description {
+  font-size: 17px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  background: var(--color-dark-green);
+  color: #fff !important;
+  padding: 16px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 32px;
+}
+
+/* --- 2. Intro Section (Equal Height) --- */
+.equal-height-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.text-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.text-content p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.icon-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 24px;
+  margin-top: 8px;
+}
+
+.icon-list-grid li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #121212;
+}
+
+.icon-circle-lime {
+  background: #E8EC67;
+  border-radius: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle-inner {
+  background: #4A6117;
+  border-radius: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle-inner svg {
+  width: 16px;
+  height: 16px;
+  color: #E8EC67;
+}
+
+.image-content {
+  width: 506px;
+  height: auto;
+}
+
+.image-content img {
+  border-radius: 8px;
+  width: 506px;
+  height: auto;
+  align-self: stretch;
+  object-fit: cover;
+}
+
+/* --- 3. Key Tax Laws (Cards Layout) --- */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 32px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Alternating Rows for Laws */
+.law-card-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  /* For image corners */
+  /* margin-bottom: 40px; */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.law-card-row.reverse {
+  direction: rtl;
+  /* Flip layout */
+}
+
+.law-card-row.reverse>* {
+  direction: ltr;
+  /* Reset text direction */
+}
+
+.law-text-col {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.law-img-col {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.law-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.icon-box-dark {
+  width: 40px;
+  height: 40px;
+  background: var(--color-dark-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.icon-box-dark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.law-text-col h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.law-text-col p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #121212;
+  margin-bottom: 24px;
+}
+
+.check-grid-law {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.check-grid-law li {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+
+.check-circle-law {
+  background: #dcee60;
+  color: #333;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- 4. CTA --- */
+.cta-banner {
+  background: var(--color-yellow-cta);
+  border-radius: 24px;
+  padding: 48px 64px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  color: #121212;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.cta-banner p {
+  width: 810px;
+  color: #121212;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0 auto 32px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-dark {
+  background: var(--color-dark-green);
+  color: #fff !important;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-block;
+  transition: 0.2s;
+  width: fit-content;
+}
+
+.btn-dark:hover {
+  background: #3d5220;
+}
+
+/* --- Footer --- */
+.footer-section {
+  background: var(--color-cream-bg);
+  padding: 80px 0 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links-grid h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-links-grid a {
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-bottom: 0px;
+}
+
+.nl-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .equal-height-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .image-content {
+    height: auto;
+  }
+
+  .law-card-row,
+  .law-card-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .law-img-col {
+    height: auto;
+    min-height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .check-grid-law {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links-grid {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nl-form {
+    width: 100%;
+  }
+
+  .nl-form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile Screen */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    color: #121212;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 0px;
+  }
+
+  .section-padding {
+    padding: 24px 0;
+  }
+
+  .tax_laws_container {
+    max-width: 100%;
+    padding: 0 24px;
+    margin: 0;
+  }
+
+  .cta-banner {
+    padding: 32px;
+  }
+
+  .cta-banner h2 {
+    color: #121212;
+    text-align: center;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  .cta-banner p {
+    width: 100%;
+    color: #121212;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin: 0 auto 24px;
+  }
+
+  .btn-dark {
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .law-card-row,
+  .law-card-row.reverse {
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0;
+    gap: 24px;
+    direction: ltr;
+  }
+
+  .law-card-row.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .law-text-col {
+    padding: 16px;
+  }
+
+  .icon-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .icon-list-grid li {
+    gap: 12px;
+  }
+
+  .icon-list-grid li span {
+    color: #121212;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  .icon-circle-lime {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+  }
+
+  .icon-circle-inner {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+  }
+
+  .icon-circle-inner svg {
+    width: 12px;
+    height: 12px;
+    color: #E8EC67;
+  }
+
+  .law-text-col p {
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+
+  .icon-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .icon-box-dark {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+
+  .law-text-col h3 {
+    color: #121212;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  .section-header p {
+    color: #5F5C64;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+
+  .section-header h2 {
+    color: #121212;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .equal-height-row {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .image-content {
+    width: 100%;
+  }
+
+  .text-content p {
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  .text-content h2 {
+    color: #121212;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-laws {
+    padding: 42px 0;
+  }
+
+  .hero-content {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-content h1 {
+    color: #121212;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -2px;
+    margin-bottom: 0px;
+  }
+
+  .hero-description {
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  .btn-hero-primary {
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+}

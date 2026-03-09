@@ -1,0 +1,415 @@
+/* --- Reset & Variables --- */
+:root {
+  --font-family: "Inter", sans-serif;
+  --color-text-main: #111;
+  --color-text-light: #555;
+  --color-dark-green: #4a6326;
+  --color-cream-bg: #f0f2eb;
+  --color-border: #e5e5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+/* Container is inherited from shared-nav-footer.css */
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-cream {
+  background-color: var(--color-cream-bg);
+}
+
+/* --- Navigation --- */
+.navbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.bag-icon {
+  width: 16px;
+  height: 12px;
+  background: #000;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  margin: 0 1px;
+}
+
+.bag-icon::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-dark-green);
+  border-radius: 50%;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  margin: auto 10px;
+  white-space: nowrap;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.login-link {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-nav {
+  background: #ffffff;
+  color: var(--color-dark-green);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- 1. Privacy Hero --- */
+.privacy-hero {
+  background: url("./assets/pricing-bg-3.png") no-repeat center/cover;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.hero-bg-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(from 45deg at 120% 120%,
+      transparent 0deg 10deg,
+      rgba(75, 101, 39, 0.05) 10deg 11deg);
+  pointer-events: none;
+}
+
+.privacy-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+/* --- 2. Privacy Content --- */
+.privacy-content {
+  padding: 60px 0 100px;
+}
+
+.content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.intro-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.intro-list li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+.intro-list a {
+  color: var(--color-dark-green);
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.summary-note {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.summary-block h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.summary-block p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Individual Sections */
+.privacy-section {
+  margin-top: 40px;
+}
+
+.privacy-section h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.privacy-section h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.privacy-section p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.bullet-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+.bullet-list li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+.contact-box {
+  margin-top: 10px;
+  font-style: normal;
+  color: #444;
+  line-height: 1.8;
+}
+
+.contact-box a {
+  color: var(--color-dark-green);
+  text-decoration: none;
+}
+
+/* --- Footer --- */
+.footer-section {
+  background: var(--color-cream-bg);
+  padding: 80px 0 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links-grid h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-links-grid a {
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.contact-details p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.footer-newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-bottom: 0px;
+}
+
+.nl-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.btn-dark {
+  background: var(--color-dark-green);
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+
+.year {
+  display: flex;
+  gap: 10px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .footer-links-grid {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .privacy-hero h1 {
+    font-size: 32px;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nl-form {
+    width: 100%;
+  }
+
+  .nl-form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

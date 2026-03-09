@@ -1,0 +1,1857 @@
+/* --- Reset & Variables --- */
+:root {
+    --font-family: "Inter", sans-serif;
+    --color-text-main: #111;
+    --color-text-light: #555;
+    --color-dark-green: #4f6f2f;
+    --color-agentic-green: #4a6117;
+    --color-lime-bg: #ebf2af;
+    --color-cream-bg: #f0f2eb;
+    --color-yellow-cta: #f0f4a4;
+    --color-border: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text-main);
+    background: #fff;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    /* max-width: 100%; */
+    display: block;
+}
+
+/* --- Navigation Styles --- */
+.wm-crumb-link {
+    font-size: 14px;
+
+}
+
+.wm-nav-wrapper {
+    /* Variables */
+    --wm-nav-height: 80px;
+    --wm-green-dark: #4d6622;
+    --wm-green-logo: #5d7436;
+    --wm-text-main: #111827;
+    --wm-text-link: #333333;
+    --wm-bg-white: #ffffff;
+
+    background-color: var(--wm-bg-white);
+    height: var(--wm-nav-height);
+    width: 100%;
+    /* Optional: Sticky header */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.wm-nav-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.wm-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--wm-text-main);
+}
+
+.wm-logo-green {
+    color: var(--wm-green-logo);
+}
+
+.wm-logo-dark {
+    color: var(--wm-text-main);
+}
+
+.wm-logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wm-text-main);
+    margin: 0 1px;
+    width: 24px;
+}
+
+.wm-logo-icon svg {
+    width: 22px;
+    height: 22px;
+    margin-top: -3px;
+}
+
+/* Menu */
+.wm-nav-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.wm-nav-link {
+    text-decoration: none;
+    color: var(--wm-text-link);
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding: 8px 0;
+}
+
+.wm-nav-link:hover {
+    color: var(--wm-green-dark);
+}
+
+/* Chevron */
+.wm-chevron {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+}
+
+/* Active Link Underline */
+.wm-nav-link.active {
+    color: var(--wm-green-dark);
+}
+
+.wm-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    /* Aligns with bottom of header */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--wm-green-dark);
+}
+
+/* Desktop Actions */
+.wm-desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.wm-login-link {
+    text-decoration: none;
+    color: var(--wm-text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.wm-login-link:hover {
+    opacity: 0.7;
+}
+
+/* Mobile Hidden Elements */
+.wm-mobile-actions,
+.wm-nav-check,
+.wm-nav-hamburger {
+    display: none;
+}
+
+/* --- Responsive / Mobile --- */
+@media (max-width: 992px) {
+    .wm-desktop-actions {
+        display: none;
+    }
+
+    .wm-nav-link.active::after {
+        display: none;
+    }
+
+    /* Hamburger */
+    .wm-nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .wm-nav-hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #111;
+        border-radius: 2px;
+    }
+
+    /* Drawer */
+    .wm-nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        gap: 0;
+        border-bottom: 1px solid #eee;
+        display: none;
+        /* Hidden by default */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .wm-nav-link {
+        width: 100%;
+        padding: 15px 20px;
+        border-bottom: 1px solid #f5f5f5;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .wm-nav-item {
+        width: 100%;
+    }
+
+    /* Show Menu */
+    .wm-nav-check:checked~.wm-nav-menu {
+        display: flex;
+    }
+
+    /* Mobile Actions */
+    .wm-mobile-actions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        gap: 15px;
+        background: #fafafa;
+    }
+
+    .wm-mobile-actions .wm-login-link {
+        text-align: center;
+    }
+
+    .wm-mobile-actions .wm-btn-primary {
+        width: max-content;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* --- Advisory Hero Section --- */
+.wm-advisory-hero {
+    /* Variables specific to this section */
+    --wm-bg-peach: #fff5ee;
+    /* The light peach background color */
+    --wm-text-main: #111827;
+    --wm-text-body: #374151;
+    --wm-text-crumb: #6b7280;
+    --wm-green-dark: #4d6622;
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Section Layout */
+    background-image: url("./assets/audit-hero.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 120px 0 100px 0;
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-main);
+    position: relative;
+}
+
+.wm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Content Wrapper (Limits width so text doesn't overlap the graphic area) */
+.wm-advisory-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Breadcrumbs */
+.wm-breadcrumbs {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.wm-crumb-sep {
+    margin: 0 8px;
+    font-size: 1.2rem;
+    line-height: 0.5;
+    margin-top: -2px;
+}
+
+.wm-crumb-current {
+    color: var(--wm-text-main);
+}
+
+/* Typography */
+.wm-hero-title {
+    font-size: 3.3rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--wm-text-main);
+    letter-spacing: -1px;
+    margin: 0 0 24px 0;
+}
+
+.wm-hero-desc {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--wm-text-body);
+    margin: 0 0 40px 0;
+    max-width: 650px;
+}
+
+/* Buttons */
+.wm-hero-btns {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.wm-btn-primary {
+    display: inline-block;
+    background-color: var(--wm-green-dark);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.wm-btn-primary:hover {
+    background-color: #3b501a;
+}
+
+.wm-btn-text {
+    display: inline-block;
+    color: var(--wm-text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: opacity 0.2s;
+}
+
+.wm-btn-text:hover {
+    opacity: 0.7;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 992px) {
+    .wm-hero-title {
+        font-size: 2.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .wm-advisory-hero {
+        padding: 80px 0 60px 0;
+    }
+
+    .wm-hero-title {
+        font-size: 2.25rem;
+    }
+
+    .wm-hero-desc {
+        font-size: 1rem;
+    }
+
+    .wm-hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .wm-btn-primary {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .wm-btn-text {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* --- Reactive Compliance Section --- */
+.wm-reactive-section {
+    --wm-bg-white: #ffffff;
+    --wm-text-head: #111827;
+    --wm-text-body: #374151;
+    --wm-green-dark: #4d6622;
+    --wm-lime-light: #eff6a3;
+    /* Yellow circle color */
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    padding: 50px 0 25px 0;
+    background-color: var(--wm-bg-white);
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-head);
+}
+
+.wm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Split Layout (Image Left / Text Right) --- */
+.wm-split-row {
+    display: flex;
+    align-items: stretch;
+    /* Forces equal height for image and text */
+    gap: 30px;
+}
+
+/* Image Column */
+.wm-img-col {
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+    /* Ensures image has presence */
+}
+
+.wm-img-col img {
+    width: 100%;
+    height: 100%;
+    /* Fills container height */
+    object-fit: cover;
+    /* Crops image to fit without distortion */
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Text Column */
+.wm-text-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centers content vertically */
+}
+
+/* Typography */
+.wm-reactive-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--wm-text-head);
+}
+
+.wm-reactive-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--wm-text-body);
+    margin-bottom: 40px;
+}
+
+/* --- Feature Grid --- */
+.wm-features-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 Columns */
+    gap: 24px 32px;
+}
+
+.wm-feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.wm-feat-item span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--wm-text-head);
+    margin-top: 5px;
+    /* Visual alignment with icon */
+}
+
+/* --- Icon Style (Yellow Circle > Green Dot > White Star) --- */
+.wm-icon-target {
+    width: 40px;
+    height: 40px;
+    background-color: #E8EC67;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wm-icon-center {
+    width: 20px;
+    height: 20px;
+    background-color: var(--wm-green-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.wm-icon-center svg {
+    width: 10px;
+    height: 10px;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 992px) {
+    .wm-split-row {
+        flex-direction: column;
+        /* Stack vertically on tablet/mobile */
+        gap: 20px;
+    }
+
+    .wm-img-col {
+        width: 100%;
+        height: auto;
+        /* Natural height for mobile */
+        min-height: auto;
+    }
+
+    .wm-img-col img {
+        height: auto;
+    }
+
+    .wm-reactive-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .wm-features-2col {
+        grid-template-columns: 1fr;
+        /* Single column grid on small screens */
+    }
+}
+
+/* --- What We Do Section --- */
+.wm-wwd-section {
+    --wm-bg-white: #ffffff;
+    --wm-text-head: #111827;
+    --wm-text-body: #666666;
+    --wm-border-color: #dbe4cd;
+    --wm-icon-bg: #eff6a3;
+    --wm-icon-color: #4d6622;
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    padding: 25px 0;
+    background-color: var(--wm-bg-white);
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-head);
+}
+
+.wm-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.wm-wwd-header {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.wm-wwd-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--wm-text-head);
+}
+
+.wm-wwd-header p {
+    font-size: 1.05rem;
+    color: var(--wm-text-body);
+    line-height: 1.5;
+}
+
+/* --- Grid Layout --- */
+.wm-wwd-grid-5 {
+    display: grid;
+    /* Default: 5 Equal Columns */
+    grid-template-columns: repeat(5, 1fr);
+
+    /* Explicit gap settings */
+    column-gap: 24px;
+    /* Horizontal space */
+    row-gap: 32px;
+    /* Vertical space (for when items wrap) */
+
+    width: 100%;
+}
+
+/* --- Card Styling --- */
+.wm-wwd-card {
+    border: 1px solid var(--wm-border-color);
+    border-radius: 12px;
+    padding: 24px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    /* Ensures card stretches to full height of the grid row */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.wm-wwd-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon Box */
+.wm-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: #E8EC67;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--wm-icon-color);
+    flex-shrink: 0;
+}
+
+.wm-icon-box svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Text */
+.wm-wwd-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    color: var(--wm-text-head);
+
+    /* Min-height ensures alignment across cards with different title lengths */
+    min-height: 42px;
+}
+
+.wm-wwd-card p {
+    font-size: 0.85rem;
+    color: var(--wm-text-body);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Responsive Layouts (Wrapping Logic) --- */
+
+/* Laptop/Tablet (1100px and below) -> Switch to 3 Columns */
+@media (max-width: 1100px) {
+    .wm-wwd-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+        /* The row-gap defined above ensures space here */
+    }
+}
+
+/* Small Tablet (768px and below) -> Switch to 2 Columns */
+@media (max-width: 768px) {
+    .wm-wwd-grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+        /* Slightly tighter on smaller screens */
+        row-gap: 24px;
+    }
+
+    .wm-wwd-card h3 {
+        min-height: auto;
+        /* Allow auto height on small screens */
+    }
+}
+
+/* Mobile (500px and below) -> Switch to 1 Column */
+@media (max-width: 500px) {
+    .wm-wwd-grid-5 {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    .wm-wwd-card {
+        padding: 20px;
+    }
+}
+
+/* --- Advisory Pathways Section --- */
+.wm-pathways-section {
+    --wm-bg-cream: #fffff0;
+    /* Light cream background */
+    --wm-text-head: #111827;
+    --wm-text-body: #374151;
+    --wm-green-dark: #4d6622;
+    --wm-yellow-pale: #eff6a3;
+    /* Outer circle color */
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    padding: 50px 0;
+    background-color: var(--wm-bg-cream);
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-head);
+}
+
+.wm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.wm-pathways-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.wm-pathways-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--wm-text-head);
+}
+
+.wm-pathways-header p {
+    font-size: 1.05rem;
+    color: #666;
+}
+
+/* --- Row Layout --- */
+.wm-path-row {
+    display: flex;
+    align-items: stretch;
+    /* Forces equal height */
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+.wm-path-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Reverse for 2nd row (Text Right, Image Left) */
+.wm-path-row.wm-row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- Columns --- */
+.wm-path-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wm-path-img {
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+}
+
+.wm-path-img img {
+    width: 100%;
+    height: 100%;
+    /* Fills container */
+    object-fit: cover;
+    /* Crops to fit */
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Text Content --- */
+.wm-path-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.wm-path-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--wm-text-body);
+    margin-bottom: 32px;
+}
+
+/* --- Feature Grid --- */
+.wm-path-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 Columns */
+    gap: 24px 32px;
+    margin-bottom: 32px;
+}
+
+.wm-path-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- Specific Icon Construction (Double Circle) --- */
+.wm-icon-double {
+    width: 32px;
+    height: 32px;
+    background-color: var(--wm-yellow-pale);
+    /* Pale yellow outer */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.wm-icon-inner {
+    width: 20px;
+    height: 20px;
+    background-color: var(--wm-green-dark);
+    /* Dark green inner */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.wm-icon-inner svg {
+    width: 12px;
+    height: 12px;
+}
+
+.wm-path-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--wm-text-head);
+}
+
+/* --- Button --- */
+.wm-btn-path {
+    display: inline-block;
+    background-color: var(--wm-green-dark);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    align-self: flex-start;
+    transition: background-color 0.2s;
+}
+
+.wm-btn-path:hover {
+    background-color: #3b501a;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .wm-path-row {
+        flex-direction: column;
+        /* Stack vertically */
+        gap: 40px;
+    }
+
+    /* Keep image on top or bottom consistent? 
+       Usually HTML order dictates. 
+       Row 1: Text Top. Row 2: Text Bottom (due to reverse).
+       Let's fix Row 2 to standard Text-Top for mobile.
+    */
+    .wm-path-row.wm-row-reverse {
+        flex-direction: column;
+        /* Text Top, Image Bottom */
+    }
+
+    .wm-path-img {
+        width: 100%;
+        height: 350px;
+        min-height: auto;
+    }
+
+    .wm-path-text h3 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .wm-path-features {
+        grid-template-columns: 1fr;
+        /* Single column bullets */
+    }
+}
+
+/* --- Pathways Section --- */
+.wm-pathways-section {
+    --wm-bg-cream: #fffff0;
+    /* Light cream/off-white background */
+    --wm-text-head: #111827;
+    --wm-text-body: #374151;
+    --wm-green-dark: #4d6622;
+    --wm-green-hover: #3b501a;
+    --wm-lime-pale: #eff6a3;
+    /* Light yellowish-green for outer circle */
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    padding: 25px 0;
+    background-color: var(--wm-bg-cream);
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-head);
+}
+
+.wm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.wm-pathways-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+}
+
+.wm-pathways-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--wm-text-head);
+    line-height: 1.2;
+}
+
+.wm-pathways-header p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* --- Row Layout (Height Matching) --- */
+.wm-path-row {
+    display: flex;
+    align-items: stretch;
+    /* Forces equal height for columns */
+    gap: 60px;
+    margin-bottom: 100px;
+    /* Spacing between rows */
+}
+
+.wm-path-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Reverse class for alternate rows (Image Left, Text Right) */
+.wm-path-row.wm-row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- Columns --- */
+.wm-path-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* Vertically centers text */
+}
+
+.wm-path-img {
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+}
+
+.wm-path-img img {
+    width: 556px;
+    height: 100%;
+    /* Fills the container height */
+    object-fit: cover;
+    /* Ensures image covers area without distortion */
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Text Content --- */
+.wm-path-text h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: var(--wm-text-head);
+}
+
+.wm-path-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--wm-text-body);
+    margin-bottom: 30px;
+}
+
+/* --- Feature Grid --- */
+.wm-path-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 Columns */
+    gap: 20px 30px;
+    margin-bottom: 35px;
+}
+
+.wm-path-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- Icon Construction (Double Circle) --- */
+.wm-icon-double {
+    width: 40px;
+    height: 40px;
+    background-color: #E8EC67;
+    /* Pale Outer Circle */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.wm-icon-inner {
+    width: 18px;
+    height: 18px;
+    /* background-color: var(--wm-green-dark); */
+    /* Dark Inner Circle */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: #ffffff; */
+    font-size: 10px;
+    /* Checkmark size */
+    font-weight: bold;
+}
+
+.wm-path-item span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--wm-text-head);
+}
+
+/* --- Button --- */
+.wm-btn-path {
+    display: inline-block;
+    background-color: var(--wm-green-dark);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s;
+}
+
+.wm-btn-path:hover {
+    background-color: var(--wm-green-hover);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 992px) {
+    .wm-path-row {
+        flex-direction: column;
+        /* Stack vertically on tablet/mobile */
+        gap: 40px;
+    }
+
+    /* On mobile, usually you want Image on Top or Text on Top consistently. */
+    .wm-path-row.wm-row-reverse {
+        flex-direction: column;
+    }
+
+    .wm-path-img {
+        width: 100%;
+        height: auto;
+        /* Natural height for mobile */
+        min-height: auto;
+    }
+
+    .wm-path-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .wm-path-features {
+        grid-template-columns: 1fr;
+        /* Single column bullets on mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    .wm-btn-path {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* --- Advisory Approach Section --- */
+.wm-approach-section {
+    --wm-bg-white: #ffffff;
+    --wm-text-head: #111827;
+    --wm-text-body: #555555;
+    --wm-green-dark: #4d6622;
+    --wm-line-yellow: #eff6a3;
+    /* Yellow Divider Line */
+    --wm-num-gray: #e8e8e8;
+    /* Very Light Gray for Numbers */
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    padding: 25px 0;
+    background-color: var(--wm-bg-white);
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-head);
+}
+
+.wm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.wm-approach-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+}
+
+.wm-approach-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--wm-text-head);
+}
+
+.wm-approach-header p {
+    font-size: 1.05rem;
+    color: #666;
+}
+
+/* --- Grid Layout (4 Steps) --- */
+.wm-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+/* --- Step Styling --- */
+.wm-step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 1. Large Number */
+.wm-step-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--wm-num-gray);
+    line-height: 1;
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 2. Yellow Divider Line */
+.wm-step-divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--wm-line-yellow);
+    margin-bottom: 24px;
+}
+
+/* 3. Icon Box */
+.wm-step-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--wm-green-dark);
+    color: #ffffff;
+    border-radius: 8px;
+    /* Rounded Square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(77, 102, 34, 0.2);
+}
+
+.wm-step-icon-box svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 4. Text Content */
+.wm-step-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--wm-text-head);
+    line-height: 1.3;
+}
+
+.wm-step-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--wm-text-body);
+    margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .wm-approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x2 on Tablet */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .wm-approach-grid {
+        grid-template-columns: 1fr;
+        /* Stack vertically on Mobile */
+        gap: 50px;
+    }
+
+    .wm-approach-header h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* --- Stand Out Section --- */
+.wm-standout-section {
+    --wm-bg-sage: #edefe9;
+    /* Light grey-green background */
+    --wm-bg-white: #ffffff;
+    --wm-text-head: #111827;
+    --wm-text-body: #555555;
+    --wm-green-dark: #3f5222;
+    /* Dark Green Icon BG */
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    padding: 50px 0;
+    background-color: var(--wm-bg-sage);
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-head);
+}
+
+.wm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.wm-standout-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.wm-standout-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--wm-text-head);
+}
+
+.wm-standout-header p {
+    font-size: 0.85rem;
+    color: var(--wm-text-body);
+}
+
+/* --- Grid Layout --- */
+.wm-standout-grid {
+    display: grid;
+    /* Desktop: 3 Columns */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* --- Card Styling --- */
+.wm-standout-card {
+    background-color: var(--wm-bg-white);
+    border-radius: 12px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Subtle shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+}
+
+.wm-standout-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Icon Box */
+.wm-standout-icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--wm-green-dark);
+    color: #ffffff;
+    border-radius: 8px;
+    /* Rounded Square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.wm-standout-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Typography */
+.wm-standout-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    color: var(--wm-text-head);
+}
+
+.wm-standout-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--wm-text-body);
+    margin: 0;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 992px) {
+    .wm-standout-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 Columns on Tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .wm-standout-grid {
+        grid-template-columns: 1fr;
+        /* 1 Column on Mobile */
+    }
+
+    .wm-standout-header h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* --- Strategy CTA Section --- */
+.wm-strategy-cta-section {
+    --wm-cta-bg: #eff6a3;
+    /* Light yellow/lime background */
+    --wm-text-head: #111827;
+    --wm-text-body: #374151;
+    --wm-green-dark: #4d6622;
+    --wm-green-hover: #3b501a;
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    padding: 60px 0 100px 0;
+    background-color: #ffffff;
+    /* Page background */
+    font-family: var(--wm-font-sans);
+}
+
+.wm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- The CTA Card --- */
+.wm-cta-card {
+    background-color: #E8EC67;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Typography */
+.wm-cta-card h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--wm-text-head);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.wm-cta-card p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--wm-text-body);
+    max-width: 750px;
+    margin: 0 0 40px 0;
+}
+
+/* Actions */
+.wm-cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Primary Button (Solid Green) */
+.wm-btn-primary {
+    background-color: var(--wm-green-dark);
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.wm-btn-primary:hover {
+    background-color: var(--wm-green-hover);
+}
+
+/* Secondary Button (Text Link) */
+.wm-btn-text {
+    color: #4a6117 !important;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 10px 10px;
+    transition: opacity 0.2s;
+    border: 1px solid #4a6117;
+    border-radius: 8px;
+
+}
+
+.wm-btn-text:hover {
+    opacity: 0.7;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .wm-cta-card {
+        padding: 60px 24px;
+        border-radius: 16px;
+    }
+
+    .wm-cta-card h2 {
+        font-size: 1.55rem;
+    }
+
+    .wm-cta-card p {
+        font-size: 0.9rem;
+    }
+
+    .wm-cta-actions {
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .wm-btn-primary {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .wm-btn-text {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* --- Footer Section --- */
+.wm-footer {
+    --wm-sage-bg: #edefe9;
+    /* The specific footer background color */
+    --wm-text-main: #111827;
+    --wm-text-body: #4b5563;
+    --wm-green-dark: #4d6622;
+    --wm-green-hover: #3b501a;
+    --wm-border: #d1d5db;
+    --wm-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    background-color: var(--wm-bg-sage);
+    /* Fallback variable name if needed */
+    background-color: #edefe9;
+    /* Hardcoded from image tone */
+    padding: 80px 0 30px 0;
+    font-family: var(--wm-font-sans);
+    color: var(--wm-text-main);
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.wm-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Top Grid --- */
+.wm-footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    /* Brand col is wider */
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Brand Column */
+.wm-foot-brand-col {
+    padding-right: 20px;
+}
+
+.wm-foot-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--wm-text-main);
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.wm-foot-logo .green {
+    color: var(--wm-green-dark);
+}
+
+.wm-tagline {
+    font-size: 0.95rem;
+    color: var(--wm-text-body);
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.wm-contact-info p {
+    margin-bottom: 16px;
+    line-height: 1.5;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.wm-contact-info strong {
+    font-weight: 700;
+    color: #000;
+}
+
+.wm-social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.wm-social-icons a {
+    color: #111;
+    transition: color 0.2s;
+}
+
+.wm-social-icons a:hover {
+    color: var(--wm-green-dark);
+}
+
+.wm-social-icons svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Link Columns */
+.wm-foot-link-col h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.wm-foot-link-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wm-foot-link-col li {
+    margin-bottom: 12px;
+}
+
+.wm-foot-link-col a {
+    text-decoration: none;
+    color: var(--wm-text-body);
+    transition: color 0.2s;
+}
+
+.wm-foot-link-col a:hover {
+    color: var(--wm-green-dark);
+}
+
+/* --- Divider --- */
+.wm-footer-divider {
+    height: 1px;
+    background-color: #d1d6cc;
+    width: 100%;
+    margin: 0;
+}
+
+/* --- Newsletter --- */
+.wm-footer-newsletter {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.wm-news-text {
+    flex: 1;
+}
+
+.wm-news-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.wm-news-text p {
+    color: var(--wm-text-body);
+    font-size: 1rem;
+    max-width: 600px;
+}
+
+.wm-news-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.wm-input-wrapper {
+    position: relative;
+    width: 300px;
+}
+
+.wm-mail-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #888;
+}
+
+.wm-input-wrapper input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    /* Space for icon */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: transparent;
+    /* Matches image style */
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.wm-btn-sub {
+    background-color: var(--wm-green-dark);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.wm-btn-sub:hover {
+    background-color: var(--wm-green-hover);
+}
+
+/* --- Bottom Section --- */
+.wm-footer-bottom {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wm-copyright {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.wm-badges {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.wm-badges img {
+    height: 32px;
+    /* Adjust based on actual assets */
+    opacity: 0.8;
+}
+
+/* --- Chatbot Floating Button --- */
+.wm-chatbot-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wm-green-dark);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.wm-chatbot-fab:hover {
+    transform: scale(1.05);
+}
+
+.wm-chatbot-fab svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .wm-footer-top {
+        grid-template-columns: 1fr 1fr;
+        /* 2 cols */
+        gap: 30px;
+    }
+
+    .wm-foot-brand-col {
+        grid-column: span 2;
+        /* Brand takes full width */
+        margin-bottom: 20px;
+    }
+
+    .wm-footer-newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wm-news-form {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .wm-input-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .wm-footer-top {
+        grid-template-columns: 1fr;
+        /* Stack everything */
+    }
+
+    .wm-foot-brand-col {
+        grid-column: span 1;
+    }
+
+    .wm-footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
+
+/* =============================================
+   ALIGNMENT OVERRIDE — match shared .container
+   (navbar & footer use max-width:1440px / 80px)
+   ============================================= */
+.wm-container {
+    max-width: 1440px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+@media (max-width: 1100px) {
+    .wm-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .wm-container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

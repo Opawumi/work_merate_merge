@@ -1,0 +1,632 @@
+/* --- Reset & Base Styles --- */
+:root {
+  --font-family: "Inter", sans-serif;
+  --color-text-main: #111111;
+  --color-text-gray: #444444;
+  --color-lime-bg: #dcee60;
+  /* Matches the bright lime green in image */
+  --color-dark-green: #4b6527;
+  /* Matches the dark olive buttons */
+  --max-width: 1280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Container is inherited from shared-nav-footer.css */
+
+
+/* --- Navigation --- */
+/* Removed: Navigation styles are now handled securely by shared-nav-footer.css */
+
+/* --- Managed Services Hero Section --- */
+/* --- Managed Services Hero Section --- */
+.hero-section {
+  position: relative;
+  background: url("./assets/managed-hero.png") no-repeat center center/cover;
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: repeating-conic-gradient(from 45deg at 120% 120%,
+      transparent 0deg,
+      transparent 10deg,
+      rgba(75, 101, 39, 0.05) 10deg,
+      rgba(75, 101, 39, 0.05) 11deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  /* CHANGE 1: 'stretch' forces both columns to be the exact same height */
+  align-items: stretch;
+}
+
+/* Left Text Content */
+.hero-content {
+  max-width: 800px;
+  /* Optional: Center the text vertically within its own box if the image is taller */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ... (Typography styles remain the same) ... */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  margin-bottom: 24px;
+  color: #444;
+}
+
+.crumb-arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.crumb-gray {
+  opacity: 0.7;
+}
+
+.crumb-current {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.hero-description {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #222;
+  margin-bottom: 40px;
+  max-width: 540px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  background-color: var(--color-dark-green);
+  color: #fff !important;
+  padding: 16px 28px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-hero-primary:hover {
+  background-color: #3d5220;
+}
+
+.btn-hero-secondary {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  border-bottom: 1px solid transparent;
+}
+
+.btn-hero-secondary:hover {
+  border-bottom-color: #111;
+}
+
+/* Right Image Wrapper */
+.hero-image-wrapper {
+  /* CHANGE 2: Ensure the wrapper takes the full height provided by the grid */
+  height: 100%;
+  width: 100%;
+}
+
+.hero-image-wrapper img {
+  /* CHANGE 3: Force image to fill the height and width */
+  width: 97%;
+  height: 100%;
+  /* CHANGE 4: 'cover' ensures the image crops smartly instead of stretching/distorting */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    /* Stack vertically on mobile */
+  }
+
+  /* CHANGE 5: Reset heights on mobile so image doesn't look stretched or huge */
+  .hero-image-wrapper {
+    height: auto;
+    margin-top: 40px;
+    aspect-ratio: 16/9;
+    /* Optional: Gives it a nice shape on mobile */
+  }
+
+  .hero-image-wrapper img {
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+}
+
+/* Removed: Duplicate reset & variables block */
+
+/* Layout Utility */
+/* Redundant container removed */
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.bg-cream {
+  background-color: var(--color-cream-bg);
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+/* --- Typography --- */
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* --- Buttons --- */
+.btn-dark {
+  background-color: var(--color-dark-green);
+  color: #fff !important;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  display: inline-block;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.btn-dark:hover {
+  background-color: #3d5220;
+}
+
+.btn-text-link {
+  font-weight: 600;
+  padding: 14px 20px;
+  display: inline-block;
+  border: 1px solid #4A6117;
+  border-radius: 8px;
+  color: #3d5220 !important;
+}
+
+.btn-text-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Section Headers --- */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+/* --- Grids --- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* --- What We Do (Card Outline) --- */
+.card-outline {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 32px;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.card-outline:hover {
+  border-color: var(--color-dark-green);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.icon-box-lime {
+  width: 48px;
+  height: 48px;
+  background: #E8EC67;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.icon-box-lime svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card-outline h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* --- Integration Pathways --- */
+.pathway-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.pathway-row:last-child {
+  margin-bottom: 0;
+}
+
+.pathway-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.pathway-text {
+  flex: 1;
+ 
+}
+
+.pathway-img {
+  /* flex: 1; */
+ 
+}
+
+.pathway-text h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.check-grid li {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  line-height: 18px;
+}
+
+.check-circle {
+  color: var(--color-dark-green);
+  background: #E8EC67;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- Engagement Models (Yellow Cards) --- */
+.card-yellow {
+  background: #F4F6B9;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.icon-box-trans svg {
+  width: 24px;
+  height: 24px;
+  color: #333;
+}
+
+.icon-box-trans {
+  width: 48px;
+  height: 48px;
+  background: #E8EC67;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-yellow h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.bullet-list {
+  list-style: none !important;
+  padding-left: 0;
+  margin-top: 16px;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4A6117;
+  /* Using the theme green for the dots */
+  font-size: 18px;
+  line-height: 1;
+  top: 2px;
+}
+
+/* --- Why Choose Us (White Cards) --- */
+.card-white {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.icon-box-dark {
+  width: 40px;
+  height: 40px;
+  background: var(--color-dark-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.icon-box-dark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-white h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-white p {
+  font-size: 14px;
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+  background: #E8EC67;
+  border-radius: 24px;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.cta-banner p {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  font-size: 16px;
+  color: #333;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Removed: Footer styling and mobile queries are now handled securely by shared-nav-footer.css */
+
+/* Removed styling for hamburger and mobile-menu handled by shared-nav-footer.css */
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 0 60px;
+  }
+
+  .hero-container {
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    line-height: 32px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 16px 20px;
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pathway-row {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .pathway-row.reverse {
+    flex-direction: column-reverse;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .check-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pathway-text .btn-dark {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .pathway-img img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .cta-banner {
+    padding: 40px 20px;
+    border-radius: 16px;
+  }
+
+  .cta-banner h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .cta-banner p {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .cta-actions .btn-dark,
+  .cta-actions .btn-text-link {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .cta-actions .btn-text-link {
+    border: none;
+    padding: 14px 0;
+  }
+}

@@ -1,0 +1,1012 @@
+/* --- Reset & Variables --- */
+:root {
+  --font-family: "Inter", sans-serif;
+  --color-text-main: #121212;
+  --color-text-light: #5F5C64;
+  --color-dark-green: #4A6117;
+  --color-darker-green: var(--color-dark-green);
+  --color-lime-accent: #dcee60;
+  --color-cream-bg: #EDEFE8;
+  --color-peach-bg: #f0f2eb;
+  /* Matching the calendar hero bg */
+  --color-yellow-cta: #E8EC67;
+  --color-border: #eeeeee;
+
+  /* Tax Type Colors */
+  --color-cit: #155DFC;
+  /* Blue */
+  --color-pit: #E8EC67;
+  /* Yellow/Gold */
+  --color-vat: #9810FA;
+  /* Purple */
+  --color-wht: #F54900;
+  /* Orange */
+  --color-tcc: #E60076;
+  /* Pink */
+  --color-cit-box: #00A63E;
+  /* Green for Date Box */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background: #fff;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utilities */
+.tax_calendar_container {
+  max-width: 1240px;
+  margin: 0 96px;
+  padding: 0 0;
+}
+
+.section-padding {
+  padding: 64px 0;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-cream {
+  background-color: var(--color-cream-bg);
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+/* --- Navigation --- */
+.navbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.bag-icon {
+  width: 16px;
+  height: 12px;
+  background: #000;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  margin: 0 1px;
+}
+
+.bag-icon::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-dark-green);
+  border-radius: 50%;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  margin: auto 10px;
+  white-space: nowrap;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.login-link {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-nav {
+  background: #ffffff;
+  color: var(--color-dark-green);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- 1. Hero Section --- */
+.hero-calendar {
+  background: url("./assets/pricing-bg-3.png") no-repeat center/cover;
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.hero-bg-lines {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Creating the radiating line effect from bottom right */
+  background: repeating-conic-gradient(from 0deg at 100% 120%,
+      transparent 0deg,
+      transparent 10deg,
+      #9bad7f 10deg,
+      /* Muted green line color */
+      #9bad7f 10.5deg);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Stats Section --- */
+.stats-parent {
+  padding: 20px 0 40px 0;
+}
+
+.stats-section {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  /* Optional: adds separation if needed */
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 Equal Columns */
+  gap: 40px;
+  text-align: center;
+  max-width: 900px;
+  /* Constrain width to keep items closer like the design */
+  margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: clamp(2.125rem, -1.625rem + 6.6667vw, 3.375rem);
+  font-weight: 800;
+  color: #111;
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  font-family: 'Inter', sans-serif;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #666;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+.hero-content {
+  width: 718px;
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.crumb-arrow {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 4px;
+  fill: #666;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #111;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-size: 17px;
+  margin-bottom: 48px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  background: var(--color-dark-green);
+  color: #fff !important;
+  padding: 16px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* --- 2. Calendar Controls & List --- */
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9f3;
+  /* Light box for filters */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: #111;
+}
+
+.select-wrapper select {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #eee;
+  font-weight: 500;
+}
+
+.tax-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: #f0f0f0;
+}
+
+.filter-btn.active {
+  background: var(--color-dark-green);
+  color: #fff;
+  border-color: var(--color-dark-green);
+}
+
+/* Event Cards */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px 24px;
+  gap: 24px;
+  transition: box-shadow 0.2s;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Date Boxes */
+.date-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.date-box.purple {
+  background-color: #a855f7;
+}
+
+.date-box.orange {
+  background-color: #ea580c;
+}
+
+.date-box.yellow {
+  background-color: #eab308;
+  color: #333;
+  /* Dark text for yellow */
+}
+
+.date-box.green {
+  background-color: #22c55e;
+}
+
+.date-box.pink {
+  background-color: #ec4899;
+}
+
+.date-box .day {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.date-box .month {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Event Details */
+.event-details {
+  flex-grow: 1;
+}
+
+.event-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.tag-gray {
+  background: #e5e7eb;
+  color: #555;
+}
+
+/* Tag Specific Colors */
+.tag-vat {
+  background: #e9d5ff;
+  color: #6b21a8;
+}
+
+.tag-wht {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.tag-pit {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.tag-cit {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.tag-tcc {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+.event-details h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #111;
+}
+
+.event-details p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* --- 3. Understanding Tax Types (Grid 5) --- */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.tax-type-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.type-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.icon-square {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.icon-square.blue {
+  background-color: var(--color-cit);
+}
+
+.icon-square.green {
+  background-color: var(--color-cit-box);
+}
+
+/* Using standard green */
+.icon-square.purple {
+  background-color: var(--color-vat);
+}
+
+.icon-square.orange {
+  background-color: var(--color-wht);
+}
+
+.icon-square.pink {
+  background-color: var(--color-tcc);
+}
+
+.type-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.type-card p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* --- 4. Benefits (Grid 3) --- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card-outline {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+}
+
+.icon-box-dark {
+  width: 40px;
+  height: 40px;
+  background: var(--color-darker-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.icon-box-dark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-outline h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-outline p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* --- 5. CTA --- */
+.cta-banner {
+  background: var(--color-yellow-cta);
+  border-radius: 24px;
+  padding: 48px 64px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  color: #121212;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.cta-banner p {
+  width: 810px;
+  color: #121212;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0 auto 32px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-dark {
+  background: var(--color-darker-green);
+  color: #fff !important;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-block;
+}
+
+/* --- Footer --- */
+.footer-section {
+  background: var(--color-cream-bg);
+  padding: 80px 0 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links-grid h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-links-grid a {
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-bottom: 0px;
+}
+
+.nl-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .calendar-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tax-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links-grid {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nl-form {
+    width: 100%;
+  }
+
+  .nl-form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Mobile Screens */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    color: #121212;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 12px;
+  }
+
+  .tax_calendar_container {
+    max-width: 100%;
+    padding: 0 24px;
+    margin: 0;
+  }
+
+  .cta-banner {
+    padding: 32px 32px;
+  }
+
+  .cta-banner h2 {
+    color: #121212;
+    text-align: center;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  .cta-banner p {
+    width: 100%;
+    font-size: 16px;
+    color: #121212;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin: 0 auto 24px;
+  }
+
+  .section-padding {
+    padding: 24px 0;
+  }
+
+  .grid-3 {
+    gap: 16px;
+  }
+
+  .card-outline {
+    border-radius: 16px;
+    border: 0.4px solid #4A6117;
+  }
+
+  .icon-box-dark {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+
+  .card-outline h3 {
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  .card-outline p {
+    color: #5F5C64;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+
+  .icon-box-dark svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+
+  .section-header {
+    text-align: center;
+    margin: 0 auto 32px;
+    max-width: 100%;
+  }
+
+  .section-header h2 {
+    color: #121212;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .section-header p {
+    color: #5F5C64;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  .tax-type-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .type-card {
+    border-radius: 16px;
+  }
+
+  .stats-parent {
+    padding: 32px 0px;
+  }
+
+  .event-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 16px;
+  }
+
+  .event-details h3 {
+    color: #121212;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  .event-details p {
+    color: #5F5C64;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  .stats-grid {
+    gap: 24px;
+  }
+
+  .stat-number {
+    color: #121212;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    color: #5F5C64;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  .stats-section {
+    padding: 0 0 24px 0;
+  }
+
+  .hero-calendar {
+    padding: 42px 0;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .btn-hero-primary {
+    width: 100%;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    padding: 12px 0px;
+  }
+
+  .hero-description {
+    margin-bottom: 32px;
+    color: #121212;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+}

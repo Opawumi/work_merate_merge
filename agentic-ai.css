@@ -1,0 +1,847 @@
+/* --- Reset & Variables --- */
+:root {
+  --font-family: "Inter", sans-serif;
+  --color-text-main: #111;
+  --color-text-light: #555;
+  --color-dark-green: #4f6f2f;
+  --color-agentic-green: #4a6117;
+  --color-lime-bg: #ebf2af;
+  --color-cream-bg: #f0f2eb;
+  --color-yellow-cta: #f0f4a4;
+  --color-border: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background: #fff;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================================
+   Container — matches homepage + navbar gutter
+   =========================================== */
+/* Container is defined in shared-nav-footer.css */
+
+
+
+
+.section-padding {
+  padding: 76px 0;
+}
+
+
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-cream {
+  background-color: #EDEFE8;
+}
+
+.section-union-bg {
+  background-color: #EDEFE8;
+  background-image: url("./assets/Union.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+/* ===========================================
+   1. Hero Section
+   =========================================== */
+.hero-agentic {
+  position: relative;
+  background: url("./assets/hero.png") center center / cover no-repeat;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  min-height: 700px;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-tech-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg,
+      rgba(0, 0, 0, 0.48) 0%,
+      rgba(0, 0, 0, 0.22) 50%,
+      rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
+}
+
+/* Container spans full width inside hero */
+.hero-agentic>.container.hero-container {
+  max-width: 1440px;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content {
+  flex: 0 0 auto;
+  max-width: 680px;
+  padding: 110px 0 72px;
+  position: relative;
+  /* Ensure it stays above gradients */
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.hero-description {
+  font-size: 18px;
+  margin-bottom: 36px;
+  opacity: 0.92;
+  line-height: 1.65;
+  color: #fff;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  background: #fff;
+  color: #4A6117 !important;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.btn-hero-primary:hover {
+  opacity: 0.88;
+}
+
+.btn-hero-text {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.92;
+}
+
+.btn-hero-text:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Robot image — right column */
+.hero-image-right {
+  flex: 0 0 auto;
+  width: 45%;
+  max-width: 500px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-bottom: -4px;
+}
+
+.hero-image-right img {
+  width: 100%;
+  max-width: 460px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===========================================
+   2. Why Agentic AI (Equal-height 2-col)
+   =========================================== */
+
+.equal-height-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+  height: 310px;
+  margin-bottom: 80px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  /* Fix: Was fixed 610px */
+}
+
+.text-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111;
+  line-height: 1.25;
+}
+
+.text-content>p {
+  font-size: 16px;
+  color: #5F5C64;
+  line-height: 1.7;
+}
+
+.highlight-box {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 8px 20px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.03);
+  margin-top: 4px;
+}
+
+.highlight-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #111;
+}
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.check-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #5F5C64;
+  line-height: 1.5;
+}
+
+.check-content {
+  display: inline;
+}
+
+.check-content strong {
+  color: #111;
+}
+
+.check-icon-circle {
+  color: var(--color-dark-green);
+  border: 2px solid var(--color-dark-green);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.image-content {
+  height: 100%;
+  width: 100%;
+  min-height: 380px;
+}
+
+.image-content img {
+  border-radius: 8px;
+  width: 100%;
+  /* Fix: Was 180vh */
+  height: 100%;
+  object-fit: cover;
+  margin-top: 1px;
+}
+
+/* ===========================================
+   3. Core Capabilities
+   =========================================== */
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-2-center {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card-white {
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.card-white:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(74, 97, 23, 0.08);
+}
+
+.card-white2 {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  width: 640px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-white2:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(74, 97, 23, 0.08);
+}
+
+.icon-box-yellow {
+  width: 44px;
+  height: 44px;
+  background: #E8EC67;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon-box-yellow svg {
+  width: 22px;
+  height: 22px;
+  color: #111;
+}
+
+.card-white h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.card-white p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===========================================
+   4. How It Works
+   =========================================== */
+.process-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 94px;
+  margin-top: 8px;
+}
+
+.process-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 36px 28px 28px;
+  position: relative;
+  background: #fff;
+  margin-top: 10px;
+}
+
+.step-badge {
+  background: #E8EC67;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 6px;
+  position: absolute;
+  top: -24px;
+  left: -20px;
+  color: #111;
+}
+
+.process-box h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+  margin-top: 6px;
+}
+
+.process-box p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===========================================
+   5. Practical Applications
+   =========================================== */
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 36px;
+  margin-top: 28px;
+}
+
+.app-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.icon-circle-yellow {
+  background: #E8EC67;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.app-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.app-item p {
+  font-size: 13px;
+  color: #111111;
+  line-height: 1.55;
+}
+
+/* ===========================================
+   6. Benefits at a Glance
+   =========================================== */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.benefit-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 22px 24px;
+  background: #fff;
+}
+
+.icon-box-lime {
+  width: 50px;
+  height: 50px;
+  background: #E8EC67;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-bottom: 18px;
+  color: var(--color-dark-green);
+}
+
+.benefit-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.benefit-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ===========================================
+   7. CTA Banner
+   =========================================== */
+.cta-banner {
+  background: #E8EC67;
+  border-radius: 24px;
+  padding: 48px 48px;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.cta-banner p {
+  max-width: 940px;
+  margin: 0 auto 36px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.65;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-dark {
+  background: var(--color-dark-green) !important;
+  color: #fff !important;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-dark:hover {
+  background: #3d5220 !important;
+}
+
+.btn-outline-dark {
+  border: 1.5px solid var(--color-agentic-green);
+  color: var(--color-agentic-green);
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-outline-dark:hover {
+  background: rgba(74, 97, 23, 0.06);
+}
+
+/* ===========================================
+   Footer copyright year
+   =========================================== */
+.year {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+@media (max-width: 1100px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .section-padding {
+    padding: 24px 0 15px 0;
+  }
+
+  .hero-agentic {
+  position: relative;
+  background: url("./assets/Hero-mob.png") center center / cover no-repeat;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  min-height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+  .hero-tech-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(221deg, rgba(154, 160, 142, 0) 2.33%, #4A6117 55.97%, #4A6117 24.89%);
+  pointer-events: none;
+}
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn-hero-primary {
+    width: 100%;
+    text-align: center;
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
+  .btn-hero-text {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff !important;
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  .hero-agentic>.container.hero-container {
+    padding: 0 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 150px 0 48px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    /* Adjusted for better fit */
+    line-height: 1.3;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .hero-image-right {
+    display: none;
+  }
+
+  .equal-height-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    height: auto;
+    /* Fix: Allow stacking */
+  }
+
+
+  .image-content {
+    height: auto;
+    min-height: 260px;
+    margin-top: 0;
+  }
+
+  .image-content img {
+    margin-top: 0;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2-center {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .process-grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner {
+    padding: 48px 28px;
+  }
+
+  .cta-banner h2 {
+    font-size: 26px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-actions .btn-dark,
+  .cta-actions .btn-outline-dark {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  .card-white {
+    padding: 20px 20px;
+  }
+
+  .card-white2 {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+  }
+
+  .card-white2 h3 {
+    font-size: 17px !important;
+  }
+
+  .card-white2 p {
+    font-size: 13.5px !important;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  /* Why does it matter mobile styles */
+  .highlight-box {
+    border: 1px solid #C5CFB6;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: none;
+    margin-top: 24px;
+  }
+
+  .highlight-box h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .check-list {
+    gap: 20px;
+  }
+
+  .check-list li {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .check-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .check-content strong {
+    font-size: 15px;
+    color: #111;
+    display: block;
+  }
+
+  .check-content span {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #5F5C64;
+    line-height: 1.6;
+  }
+
+  .check-icon-circle {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-width: 2px;
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .section-header h2,
+  .text-content h2 {
+    font-size: 24px;
+  }
+
+  .step-badge {
+    background: #E8EC67;
+    width: 40px;
+    height: 40px; 
+ }
+
+ .process-grid-2x2 {
+  gap: 34px;
+  margin-top: 18px;
+}
+
+.process-box {
+    padding: 16px 28px 28px;
+}
+
+.icon-box-lime {
+    width: 40px;
+    height: 40px;
+}
+
+}
