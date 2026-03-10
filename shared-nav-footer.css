@@ -657,7 +657,7 @@
 .footer-socials {
   display: flex;
   gap: 24px;
-  margin-top: 12px;
+  margin-top: 32px;
 }
 
 .social-icon {
@@ -698,9 +698,10 @@
 }
 
 .footer-links-grid a {
-  color: #4d4d4d;
+  color: #6b6767 !important;
   transition: 0.2s;
-  font-size: 14px;
+  font-size: 14.5px;
+  font-weight: 500;
 }
 
 .footer-links-grid a:hover {
@@ -792,7 +793,7 @@
 }
 
 .brand-logos img {
-  height: 32px;
+  height: 41px;
   width: auto;
 }
 
