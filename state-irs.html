@@ -1407,6 +1407,19 @@
           setActivePanel("mobileMainPanel");
         });
       });
+
+      // State IRS region tabs: show/hide content by data-tab
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabId = btn.getAttribute("data-tab");
+          if (!tabId) return;
+          document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+          document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active-tab"));
+          btn.classList.add("active");
+          const panel = document.getElementById(tabId);
+          if (panel) panel.classList.add("active-tab");
+        });
+      });
     </script>
 
     <script>
