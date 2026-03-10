@@ -527,7 +527,7 @@
 
         <div class="pricing-toggle" id="pricingToggle">
           <span class="toggle-option" id="toggleMonthly">Monthly</span>
-          <span class="toggle-option active" id="toggleAnnual">Annual</span>
+          <span class="toggle-option active" id="toggleAnnual">Annual (Discount Available)</span>
         </div>
       </div>
     </section>
@@ -545,9 +545,10 @@
               <div
                 class="price"
                 data-monthly="8500"
-                data-annual="7225"
+                data-annual="102000"
                 data-period-monthly="/employee/mo"
                 data-period-annual="/emp/yr"
+                data-multiply-annual="true"
               >
                 ₦86,700 <span class="period">/emp/yr</span>
               </div>
@@ -606,9 +607,10 @@
               <div
                 class="price"
                 data-monthly="10000"
-                data-annual="8500"
+                data-annual="120000"
                 data-period-monthly="/employee/mo"
                 data-period-annual="/emp/yr"
+                data-multiply-annual="true"
               >
                 ₦102,000 <span class="period">/emp/yr</span>
               </div>
@@ -667,11 +669,10 @@
               <div
                 class="price"
                 data-monthly="250000"
-                data-annual="212500"
-                data-period-monthly="/mo"
-                data-period-annual="/yr"
+                data-annual="3000000"
+                data-period="/mo"
               >
-                ₦2,550,000 <span class="period">/yr</span>
+                ₦3,000,000 <span class="period">/mo</span>
               </div>
             </div>
             <a href="#" class="btn-outline">Buy Now</a>
@@ -742,11 +743,10 @@
               <div
                 class="price"
                 data-monthly="500000"
-                data-annual="425000"
-                data-period-monthly="/mo"
-                data-period-annual="/yr"
+                data-annual="6000000"
+                data-period="/mo"
               >
-                ₦5,100,000 <span class="period">/yr</span>
+                ₦6,000,000 <span class="period">/mo</span>
               </div>
             </div>
             <a href="#" class="btn-outline">Buy Now</a>
@@ -1123,9 +1123,9 @@
             </button>
             <div class="faq-answer">
               <p>
-                Absolutely! Annual billing saves you 15% compared to monthly
-                billing. You can switch to annual billing at any time from your
-                account settings.
+                Yes. You can choose to pay monthly or annually based on what
+                works best for your business. You can switch your billing
+                preference at any time from your account settings.
               </p>
             </div>
           </div>
@@ -1423,12 +1423,27 @@
 
         switchablePrices.forEach((el) => {
           const monthly = parseFloat(el.dataset.monthly);
-          const annualMo = parseFloat(el.dataset.annual); // discounted monthly rate
-          const annualYr = Math.round(annualMo * 12); // total paid per year
-          const period = annual
-            ? el.dataset.periodAnnual || el.dataset.period || ""
-            : el.dataset.periodMonthly || el.dataset.period || "";
-          const amount = annual ? annualYr : monthly;
+          const multiplyAnnual = el.dataset.multiplyAnnual === "true";
+          let period;
+          let amount;
+
+          if (multiplyAnnual) {
+            // Starter & Growth: respond to toggle (monthly vs annual)
+            period = annual
+              ? el.dataset.periodAnnual || el.dataset.period || ""
+              : el.dataset.periodMonthly || el.dataset.period || "";
+
+            amount = annual ? Math.round(monthly * 12) : monthly;
+          } else {
+            // Business & Enterprise: completely ignore toggle
+            // Keep both the numeric value and the displayed period constant
+            period =
+              el.dataset.period ||
+              el.dataset.periodAnnual ||
+              el.dataset.periodMonthly ||
+              "";
+            amount = monthly;
+          }
 
           // Animate the number change
           el.classList.add("price-switching");
