@@ -219,7 +219,8 @@ img {
   height: 14px;
 }
 .wm-hero-content{
-  width: 620px;
+  width: 100%;
+  max-width: 750px;
 }
 .wm-hero-content h1 {
   font-size: 37px;
@@ -1056,9 +1057,14 @@ img {
     gap: 24px;
   }
 
+  .wm-hero-content {
+    max-width: 100%;
+  }
+
   .wm-breadcrumbs {
     margin-bottom: 16px;
     font-size: 0.8rem;
+    gap: 6px;
   }
 
   .wm-breadcrumbs span:not(.svg-container) {
@@ -1066,13 +1072,13 @@ img {
   }
 
   .wm-hero-content h1 {
-    font-size: 1.55rem;
-    line-height: 1.25;
+    font-size: 2.2rem;
+    line-height: 1.08;
     margin-bottom: 16px;
   }
 
   .wm-hero-content p {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
     margin-bottom: 24px;
     max-width: 100%;
   }
@@ -1083,20 +1089,24 @@ img {
     width: 100%;
   }
 
-  .wm-hero-actions .wm-btn {
+  .wm-hero-actions .wm-btn-primary {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+    min-height: 46px;
   }
 
   .wm-hero-actions .wm-btn-text {
+    width: auto;
     padding: 10px 16px;
+    align-self: center;
   }
 
   .wm-hero-grid>img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    margin-top: 4px;
   }
 
   /* Section spacing */
@@ -1355,7 +1365,8 @@ img {
 
 @media (max-width: 480px) {
   .wm-hero-content h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    line-height: 1.2;
   }
 
   .wm-center-header h2,
