@@ -480,6 +480,123 @@ h1 {
   color: #777;
 }
 
+/* ── FAQ Section ─────────────────────────────────────────── */
+.faq-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid #e5e7eb;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #121212;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: #4a6117;
+}
+
+/* Icon wrapper */
+.faq-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.faq-icon svg {
+  width: 14px;
+  height: 14px;
+  color: #121212;
+  transition: color 0.2s;
+}
+
+/* Vertical line of the + icon */
+.faq-icon .line-v {
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  transform-origin: center;
+}
+
+/* ── Open state ── */
+.faq-item.is-open .faq-question {
+  color: #4a6117;
+}
+
+.faq-item.is-open .faq-icon {
+  background: #4a6117;
+  border-color: #4a6117;
+}
+
+.faq-item.is-open .faq-icon svg {
+  color: #fff;
+}
+
+/* Hide the vertical stroke → + becomes − */
+.faq-item.is-open .faq-icon .line-v {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+/* ── Answer panel ── */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-item.is-open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer > p {
+  min-height: 0; /* required for grid collapse trick */
+  overflow: hidden;
+  padding-bottom: 24px;
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-menu,

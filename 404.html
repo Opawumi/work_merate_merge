@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
+    <!-- Open Graph / Twitter Card (404 page; noindex) -->
+    <meta property="og:site_name" content="WorkMerate" />
+    <meta property="og:title" content="404 — Page Not Found | WorkMerate" />
+    <meta
+      property="og:description"
+      content="We couldn't find the page you're looking for — WorkMerate."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://workmeraterp.com.ng/" />
+    <meta
+      property="og:image"
+      content="https://workmeraterp.com.ng/assets/favicon.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@WorkMerate" />
+    <meta name="twitter:creator" content="@WorkMerate" />
+    <title>404 — Page Not Found | WorkMerate</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="shared-nav-footer.css" />
+    <style>
+      .error-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        padding: 48px 16px;
+      }
+      .error-box {
+        text-align: center;
+        max-width: 740px;
+      }
+      .error-code {
+        font-size: 96px;
+        font-weight: 700;
+        color: #4a6117;
+        margin: 0;
+      }
+      .error-title {
+        font-size: 28px;
+        margin: 8px 0;
+      }
+      .error-desc {
+        color: #555;
+        margin-bottom: 20px;
+      }
+      .error-actions a {
+        display: inline-block;
+        margin: 6px 8px;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+      }
+      .btn-home {
+        background: #4a6117;
+        color: #fff;
+      }
+      .btn-contact {
+        border: 1px solid #ddd;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="error-wrap">
+      <div class="error-box">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page not found</h2>
+        <p class="error-desc">
+          We couldn't find the page you're looking for. It may have been moved
+          or deleted.
+        </p>
+        <div class="error-actions">
+          <a class="btn-home" href="/">Go to Home</a>
+          <a class="btn-contact" href="/contact-us.html">Contact Support</a>
+          <a class="btn-contact" href="/sitemap.xml">View Sitemap</a>
+        </div>
+        <p style="margin-top: 18px; color: #666; font-size: 14px">
+          Auto-redirecting to the homepage in <span id="count">10</span>s —
+          <a href="/">skip</a>
+        </p>
+      </div>
+    </main>
+
+    <script>
+      // simple countdown then redirect
+      (function () {
+        var n = 10;
+        var el = document.getElementById("count");
+        var t = setInterval(function () {
+          n--;
+          if (el) el.textContent = n;
+          if (n <= 0) {
+            clearInterval(t);
+            window.location = "/";
+          }
+        }, 1000);
+      })();
+    </script>
+  </body>
+</html>

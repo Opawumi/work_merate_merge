@@ -1,0 +1,11 @@
+# robots.txt for https://workmeraterp.com.ng/
+# Allow all crawlers but block common private paths
+
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Allow: /
+
+# Sitemap location
+Sitemap: https://workmeraterp.com.ng/sitemap.xml

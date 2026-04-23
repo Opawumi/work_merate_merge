@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "WorkMerate",
+      "url": "https://workmeraterp.com.ng/",
+      "logo": "https://workmeraterp.com.ng/assets/favicon.png",
+      "email": "support@workmerate.ng.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-256-441-3090",
+          "contactType": "customer support",
+          "areaServed": "US"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+234-907-713-7167",
+          "contactType": "customer support",
+          "areaServed": "NG"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "WorkMerate",
+      "url": "https://workmeraterp.com.ng/"
+    },
+    {
+      "@type": "Service",
+      "name": "Tax Automation & Compliance",
+      "description": "Primary systems and automation layer for tax computations, filings and reporting.",
+      "url": "https://workmeraterp.com.ng/services.html"
+    },
+    {
+      "@type": "Service",
+      "name": "ERP & POS Integrations",
+      "description": "Platform and infrastructure integrations for ERP and POS.",
+      "url": "https://workmeraterp.com.ng/erp-pos.html"
+    },
+    {
+      "@type": "Service",
+      "name": "Audit & Regulatory Reporting",
+      "description": "Assurance and statutory reporting services.",
+      "url": "https://workmeraterp.com.ng/ar-reporting.html"
+    }
+  ]
+}
