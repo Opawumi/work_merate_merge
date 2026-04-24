@@ -74,7 +74,7 @@ def mega_fix():
 
             new_content = re.sub(r'<a([^>]+)>(.*?)Login(.*?)</a>', fix_login, new_content, flags=re.IGNORECASE | re.DOTALL)
 
-            # Signup / Try it Free
+            # Signup / Request Demo
             def fix_signup(match):
                 attr, text, text2 = match.groups()
                 if 'href="#"' in attr or 'href=\'#\'' in attr:
@@ -82,7 +82,7 @@ def mega_fix():
                     return f'<a{new_attr}>{text}{match.group(2)}{text2}</a>'
                 return match.group(0)
 
-            for kw in ['Sign up', 'Sign Up', 'Try it Free']:
+            for kw in ['Sign up', 'Sign Up', 'Request Demo']:
                 new_content = re.sub(r'<a([^>]+)>(.*?)' + kw + r'(.*?)</a>', fix_signup, new_content, flags=re.IGNORECASE | re.DOTALL)
 
             with open(filename, 'w', encoding='utf-8') as f:

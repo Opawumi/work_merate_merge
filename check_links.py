@@ -22,5 +22,5 @@ for f in html_files:
             print(f"{f}: Marketing Automation link is broken (#)")
         if 'Login' in text:
             print(f"{f}: Login link is broken (#)")
-        if any(kw in text for kw in ['Try it Free', 'Sign up', 'Sign Up']):
+        if any(kw in text for kw in ['Request Demo', 'Sign up', 'Sign Up']):
             print(f"{f}: Signup link is broken (#)")

@@ -795,7 +795,7 @@
 
         <div class="nav-actions desktop-only">
           <a href="login.html" class="login-link">Login</a>
-          <a href="signup.html" class="btn-nav">Try it Free</a>
+          <a href="signup.html" class="btn-nav">Request Demo</a>
         </div>
 
         <div class="hamburger" id="hamburger">
@@ -835,7 +835,7 @@
           </button>
           <a href="about.html" class="mobile-link">About us</a>
           <div class="mobile-actions-wrapper">
-            <a href="signup.html" class="btn-nav full-width">Try it Free</a>
+            <a href="signup.html" class="btn-nav full-width">Request Demo</a>
             <a href="login.html" class="login-link">Login</a>
           </div>
         </div>
@@ -865,7 +865,7 @@
             >Advanced Intelligence</a
           >
           <div class="mobile-actions-wrapper">
-            <a href="signup.html" class="btn-nav full-width">Try it Free</a>
+            <a href="signup.html" class="btn-nav full-width">Request Demo</a>
             <a href="login.html" class="login-link">Login</a>
           </div>
         </div>
@@ -900,7 +900,7 @@
             >Custom Module Development</a
           >
           <div class="mobile-actions-wrapper">
-            <a href="signup.html" class="btn-nav full-width">Try it Free</a>
+            <a href="signup.html" class="btn-nav full-width">Request Demo</a>
             <a href="login.html" class="login-link">Login</a>
           </div>
         </div>
@@ -918,7 +918,7 @@
           <a href="state-irs.html" class="mobile-sublink">State IRS</a>
           <a href="learning.html" class="mobile-sublink">Learning</a>
           <div class="mobile-actions-wrapper">
-            <a href="signup.html" class="btn-nav full-width">Try it Free</a>
+            <a href="signup.html" class="btn-nav full-width">Request Demo</a>
             <a href="login.html" class="login-link">Login</a>
           </div>
         </div>
@@ -2244,110 +2244,6 @@
     </div>
     <!-- end #cookieModal -->
 
-    <!-- Request Demo Modal -->
-    <div id="requestDemoModal" class="demo-modal-overlay" aria-hidden="true">
-      <div
-        class="demo-modal-box"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="requestDemoTitle"
-      >
-        <button
-          class="demo-modal-close"
-          id="closeRequestDemo"
-          aria-label="Close"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-        <h2 class="demo-modal-title" id="requestDemoTitle">
-          Get a Free Demo of WorkMerate
-        </h2>
-        <form class="demo-modal-form" onsubmit="return false;">
-          <div class="demo-form-row">
-            <input
-              type="text"
-              class="demo-input"
-              placeholder="First Name"
-              required
-            />
-            <input
-              type="text"
-              class="demo-input"
-              placeholder="Last Name"
-              required
-            />
-          </div>
-          <div class="demo-form-row">
-            <input
-              type="email"
-              class="demo-input"
-              placeholder="Email Address"
-              required
-            />
-            <input
-              type="tel"
-              class="demo-input"
-              placeholder="Phone Number"
-              required
-            />
-          </div>
-          <input
-            type="url"
-            class="demo-input demo-input-full"
-            placeholder="Website URL"
-          />
-          <div class="demo-select-wrapper">
-            <select class="demo-select">
-              <option value="" disabled selected>
-                How many employees work there?
-              </option>
-              <option value="1-10">1 – 10</option>
-              <option value="11-50">11 – 50</option>
-              <option value="51-200">51 – 200</option>
-              <option value="201-500">201 – 500</option>
-              <option value="501+">501+</option>
-            </select>
-            <svg
-              class="demo-select-chevron"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-          <label class="demo-consent-label">
-            <input type="checkbox" class="demo-checkbox" checked />
-            <span class="demo-consent-text">
-              By clicking "Get your free demo", you agree to
-              <strong>WorkMerate</strong> contacting you with marketing-related
-              emails or by telephone. You may unsubscribe from these
-              communications at any time. For information on how to unsubscribe,
-              as well as our privacy practices and commitment to protecting your
-              privacy, please review our
-              <a href="privacy.html" class="demo-privacy-link"
-                >Privacy Policy</a
-              >
-            </span>
-          </label>
-          <button type="submit" class="demo-submit-btn">Get demo</button>
-        </form>
-      </div>
-    </div>
-
     <!-- Explore Modules Modal -->
     <div id="exploreModulesModal" class="demo-modal-overlay" aria-hidden="true">
       <div
@@ -2848,5 +2744,6 @@
         });
       }
     </script>
+    <script src="request-demo-modal.js"></script>
   </body>
 </html>

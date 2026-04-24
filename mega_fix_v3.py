@@ -61,8 +61,8 @@ def mega_fix():
                 text_content = re.sub(r'<a href=["\']#["\']>(.*?)Login(.*?)</a>', 
                                      r'<a href="login.html">\1Login\2</a>', text_content, flags=re.IGNORECASE | re.DOTALL)
                 
-                # Fix Signup / Try it Free
-                for kw in ['Sign up', 'Sign Up', 'Try it Free']:
+                # Fix Signup / Request Demo
+                for kw in ['Sign up', 'Sign Up', 'Request Demo']:
                     text_content = re.sub(r'<a([^>]+href=["\']#["\'][^>]*)>(.*?)' + kw + r'(.*?)</a>', 
                                          r'<a\1 href="signup.html">\2' + kw + r'\3</a>', text_content, flags=re.IGNORECASE | re.DOTALL)
                     text_content = re.sub(r'<a href=["\']#["\']>(.*?)' + kw + r'(.*?)</a>', 

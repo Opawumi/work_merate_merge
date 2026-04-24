@@ -45,15 +45,15 @@ def mega_fix():
                                  r'\1login.html\2Login\3</a>', 
                                  new_content, flags=re.IGNORECASE | re.DOTALL)
             
-            # Sign up / Try it Free
+            # Sign up / Request Demo
             new_content = re.sub(r'(<a[^>]+href=["\'])#?["\'][^>]*>(.*?)Sign up(.*?)</a>', 
                                  r'\1signup.html\2Sign up\3</a>', 
                                  new_content, flags=re.IGNORECASE | re.DOTALL)
             new_content = re.sub(r'(<a[^>]+href=["\'])#?["\'][^>]*>(.*?)Sign Up(.*?)</a>', 
                                  r'\1signup.html\2Sign Up\3</a>', 
                                  new_content, flags=re.IGNORECASE | re.DOTALL)
-            new_content = re.sub(r'(<a[^>]+href=["\'])#?["\'][^>]*>(.*?)Try it Free(.*?)</a>', 
-                                 r'\1signup.html\2Try it Free\3</a>', 
+            new_content = re.sub(r'(<a[^>]+href=["\'])#?["\'][^>]*>(.*?)Request Demo(.*?)</a>', 
+                                 r'\1signup.html\2Request Demo\3</a>', 
                                  new_content, flags=re.IGNORECASE | re.DOTALL)
             
             # Also fix marketing-automation.html if it has # for itself? Yes, the script will catch it.
