@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment & Consultation - WorkMerate</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+
+  <div class="checkout-wrapper">
+    <!-- LEFT SIDEBAR STEPPER -->
+    <aside class="checkout-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo" aria-label="WorkMerate Home">
+          <svg width="180" height="22.5" viewBox="0 0 240 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#logo_clip)">
+              <path d="M36.8794 1.38867L30.1371 27.2525H22.5106L18.3842 10.231L14.1104 27.2525H6.48385L-0.0742188 1.38867H6.66807L10.3892 20.2155L14.9946 1.38867H21.9211L26.3423 20.2155L30.1003 1.38867H36.8794Z" fill="#4A6117"/>
+              <path d="M71.3002 10.1201C72.037 8.99027 72.9581 8.10603 74.0634 7.46742C75.1687 6.80424 76.3968 6.47266 77.7477 6.47266V13.1413H76.0161C74.4441 13.1413 73.2651 13.4851 72.4791 14.1729C71.6932 14.836 71.3002 16.015 71.3002 17.7098V27.2522H65V6.69371H71.3002V10.1201Z" fill="#4A6117"/>
+              <path d="M94.0225 27.2522L87.7592 18.6309V27.2522H81.459V-0.0117188H87.7592V15.0571L93.9856 6.69372H101.76L93.2119 17.0098L101.833 27.2522H94.0225Z" fill="#4A6117"/>
+              <path d="M134.044 1.38867V27.2525H127.744V11.7416L121.96 27.2525H116.875L111.054 11.7047V27.2525H104.754V1.38867H112.196L119.454 19.2944L126.639 1.38867H134.044Z" fill="#121212"/>
+              <path d="M158.48 16.6418C158.48 17.2313 158.443 17.8453 158.369 18.4839H144.111C144.209 19.7612 144.615 20.7437 145.327 21.4314C146.064 22.0946 146.96 22.4262 148.016 22.4262C149.588 22.4262 150.681 21.763 151.295 20.4366H158.001C157.657 21.7875 157.031 23.0034 156.122 24.0841C155.238 25.1648 154.12 26.0122 152.769 26.6263C151.418 27.2403 149.908 27.5473 148.237 27.5473C146.223 27.5473 144.43 27.1175 142.858 26.2578C141.286 25.3982 140.058 24.1701 139.174 22.5735C138.29 20.977 137.848 19.1103 137.848 16.9734C137.848 14.8365 138.277 12.9698 139.137 11.3732C140.021 9.7767 141.25 8.54859 142.821 7.68892C144.393 6.82925 146.199 6.39941 148.237 6.39941C150.227 6.39941 151.995 6.81697 153.543 7.65208C155.09 8.48719 156.294 9.67845 157.153 11.2259C158.038 12.7733 158.48 14.5786 158.48 16.6418ZM152.032 14.9839C152.032 13.9031 151.664 13.0435 150.927 12.4048C150.19 11.7662 149.269 11.4469 148.164 11.4469C147.108 11.4469 146.211 11.7539 145.474 12.368C144.762 12.982 144.32 13.854 144.148 14.9839H152.032Z" fill="#121212"/>
+              <path d="M168.619 10.1201C169.355 8.99027 170.276 8.10603 171.382 7.46742C172.487 6.80424 173.715 6.47266 175.066 6.47266V13.1413H173.334C171.762 13.1413 170.583 13.4851 169.798 14.1729C169.012 14.836 168.619 16.015 168.619 17.7098V27.2522H162.318V6.69371H168.619V10.1201Z" fill="#121212"/>
+              <path d="M177 16.5371C177 14.4248 177.393 12.5704 178.179 10.9738C178.99 9.37728 180.083 8.14918 181.458 7.28951C182.833 6.42984 184.369 6 186.063 6C187.513 6 188.778 6.29474 189.858 6.88423C190.964 7.47372 191.811 8.24743 192.4 9.20535V6.29475H198.701V26.8532H192.4V23.9426C191.786 24.9005 190.927 25.6742 189.821 26.2637C188.741 26.8532 187.476 27.1479 186.027 27.1479C184.356 27.1479 182.833 26.7181 181.458 25.8584C180.083 24.9742 178.99 23.7338 178.179 22.1373C177.393 20.5162 177 18.6495 177 16.5371ZM192.4 16.574C192.4 15.002 191.958 13.7616 191.074 12.8528C190.214 11.944 189.158 11.4896 187.906 11.4896C186.653 11.4896 185.584 11.944 184.7 12.8528C183.841 13.737 183.411 14.9652 183.411 16.5371C183.411 18.1091 183.841 19.3618 184.7 20.2951C185.584 21.2039 186.653 21.6583 187.906 21.6583C189.158 21.6583 190.214 21.2039 191.074 20.2951C191.958 19.3863 192.4 18.1459 192.4 16.574Z" fill="#121212"/>
+              <path d="M215.611 21.9104V27.2527H212.406C210.122 27.2527 208.341 26.7001 207.064 25.5948C205.787 24.4649 205.148 22.635 205.148 20.1051V11.926H202.643V6.69425H205.148V1.68359H211.448V6.69425H215.575V11.926H211.448V20.1788C211.448 20.7929 211.595 21.235 211.89 21.5052C212.185 21.7754 212.676 21.9104 213.364 21.9104H215.611Z" fill="#121212"/>
+              <path d="M239.015 16.6418C239.015 17.2313 238.978 17.8453 238.904 18.4839H224.646C224.744 19.7612 225.15 20.7437 225.862 21.4314C226.599 22.0946 227.495 22.4262 228.552 22.4262C230.123 22.4262 231.216 21.763 231.831 20.4366H238.536C238.192 21.7875 237.566 23.0034 236.657 24.0841C235.773 25.1648 234.655 26.0122 233.304 26.6263C231.953 27.2403 230.443 27.5473 228.773 27.5473C226.758 27.5473 224.965 27.1175 223.393 26.2578C221.822 25.3982 220.593 24.1701 219.709 22.5735C218.825 20.977 218.383 19.1103 218.383 16.9734C218.383 14.8365 218.813 12.9698 219.672 11.3732C220.557 9.7767 221.785 8.54859 223.357 7.68892C224.929 6.82925 226.734 6.39941 228.773 6.39941C230.762 6.39941 232.531 6.81697 234.078 7.65208C235.625 8.48719 236.829 9.67845 237.689 11.2259C238.573 12.7733 239.015 14.5786 239.015 16.6418ZM232.567 14.9839C232.567 13.9031 232.199 13.0435 231.462 12.4048C230.725 11.7662 229.804 11.4469 228.699 11.4469C227.643 11.4469 226.746 11.7539 226.009 12.368C225.297 12.982 224.855 13.854 224.683 14.9839H232.567Z" fill="#121212"/>
+              <path d="M55 9H43C40.7909 9 39 10.7909 39 13V21C39 23.2091 40.7909 25 43 25H55C57.2091 25 59 23.2091 59 21V13C59 10.7909 57.2091 9 55 9Z" stroke="#121212" stroke-width="4"/>
+              <path d="M44 12C44 1.33333 54 1.33335 54 12" stroke="white" stroke-width="3" stroke-linecap="round"/>
+              <path d="M44 12C44 1.33333 54 1.33335 54 12" stroke="#4A6117" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <defs>
+              <clipPath id="logo_clip">
+                <rect width="239.145" height="28" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+
+      <!-- STEPPER LIST -->
+      <nav class="stepper-nav">
+        <ul class="stepper-list">
+          <li class="stepper-item active" data-step-target="1">
+            <div class="step-num">1</div>
+            <span class="step-label">Company Detail</span>
+          </li>
+          <li class="step-connector"></li>
+
+          <li class="stepper-item" data-step-target="2">
+            <div class="step-num">2</div>
+            <span class="step-label">Contact</span>
+          </li>
+          <li class="step-connector"></li>
+
+          <li class="stepper-item" data-step-target="3">
+            <div class="step-num">3</div>
+            <span class="step-label">ERP Requirements</span>
+          </li>
+          <li class="step-connector"></li>
+
+          <li class="stepper-item" data-step-target="4">
+            <div class="step-num">4</div>
+            <span class="step-label">Schedule</span>
+          </li>
+          <li class="step-connector"></li>
+
+          <li class="stepper-item" data-step-target="5">
+            <div class="step-num">5</div>
+            <span class="step-label">Review</span>
+          </li>
+          <li class="step-connector"></li>
+
+          <li class="stepper-item" data-step-target="6">
+            <div class="step-num">6</div>
+            <span class="step-label">Done</span>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="pricing.html" class="btn-back-pricing">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          Back to Pricing
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN STEP CONTENT CONTAINER -->
+    <main class="checkout-main">
+      <div class="checkout-card-box">
+
+        <!-- ==================== STEP 1: COMPANY DETAIL ==================== -->
+        <div class="step-pane active" data-step="1">
+          <div class="pane-header">
+            <h2>Tell us about your business</h2>
+            <p>Provide details about your organization to help us find the right ERP solution.</p>
+          </div>
+
+          <form id="step1-form" class="form-grid">
+            <!-- Company Name -->
+            <div class="form-group">
+              <label for="company_name">Company Name <span class="required-star">*</span></label>
+              <input type="text" id="company_name" class="form-control" placeholder="e.g., Acme Corporation" required />
+            </div>
+
+            <!-- Industry Dropdown -->
+            <div class="form-group">
+              <label>Industry</label>
+              <div class="custom-dropdown" data-dropdown="industry">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">Select Industry</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="Agriculture">Agriculture</div>
+                  <div class="dropdown-item" data-value="Construction">Construction</div>
+                  <div class="dropdown-item" data-value="Education">Education</div>
+                  <div class="dropdown-item" data-value="Government">Government</div>
+                  <div class="dropdown-item" data-value="Healthcare">Healthcare</div>
+                  <div class="dropdown-item" data-value="Hospitality">Hospitality</div>
+                  <div class="dropdown-item" data-value="Logistics">Logistics</div>
+                  <div class="dropdown-item" data-value="Manufacturing">Manufacturing</div>
+                  <div class="dropdown-item" data-value="Technology">Technology</div>
+                  <div class="dropdown-item" data-value="Other">Other</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Type Dropdown -->
+            <div class="form-group">
+              <label>Business Type</label>
+              <div class="custom-dropdown" data-dropdown="business_type">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">select type</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="Limited Liability Company (LLC)">Limited Liability Company (LLC)</div>
+                  <div class="dropdown-item" data-value="Partnership">Partnership</div>
+                  <div class="dropdown-item" data-value="Sole proprietorship">Sole proprietorship</div>
+                  <div class="dropdown-item" data-value="Corporation">Corporation</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Number of Employees Dropdown -->
+            <div class="form-group">
+              <label>Number of Employees</label>
+              <div class="custom-dropdown" data-dropdown="employees">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">Select range</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="1 - 10">1 - 10</div>
+                  <div class="dropdown-item" data-value="11 - 50">11 - 50</div>
+                  <div class="dropdown-item" data-value="51 - 200">51 - 200</div>
+                  <div class="dropdown-item" data-value="201 - 500">201 - 500</div>
+                  <div class="dropdown-item" data-value="500+">500+</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Country Dropdown -->
+            <div class="form-group">
+              <label>Country</label>
+              <div class="custom-dropdown" data-dropdown="country">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">Select country</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="Nigeria">Nigeria</div>
+                  <div class="dropdown-item" data-value="Ghana">Ghana</div>
+                  <div class="dropdown-item" data-value="Kenya">Kenya</div>
+                  <div class="dropdown-item" data-value="South Africa">South Africa</div>
+                  <div class="dropdown-item" data-value="United States">United States</div>
+                  <div class="dropdown-item" data-value="United Kingdom">United Kingdom</div>
+                  <div class="dropdown-item" data-value="Canada">Canada</div>
+                  <div class="dropdown-item" data-value="Other">Other</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- State / City -->
+            <div class="form-group">
+              <label for="state_city">State / City</label>
+              <input type="text" id="state_city" class="form-control" placeholder="e.g. Texas, Austin" />
+            </div>
+
+            <!-- Company website -->
+            <div class="form-group full-width">
+              <label for="website">Company website (optional)</label>
+              <input type="url" id="website" class="form-control" placeholder="https://www.company.com" />
+            </div>
+          </form>
+
+          <div class="pane-actions right-only">
+            <button type="button" class="btn-primary" data-next-step="2">Continue</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 2: CONTACT ==================== -->
+        <div class="step-pane" data-step="2">
+          <div class="pane-header">
+            <h2>Who should we contact?</h2>
+            <p>Please provide the details of the primary point of contact for this consultation.</p>
+          </div>
+
+          <form id="step2-form" class="form-grid">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="full_name">Full Name <span class="required-star">*</span></label>
+              <input type="text" id="full_name" class="form-control" placeholder="e.g., John Doe" required />
+            </div>
+
+            <!-- Job Title -->
+            <div class="form-group">
+              <label for="job_title">Job title <span class="required-star">*</span></label>
+              <input type="text" id="job_title" class="form-control" placeholder="e.g. Manager" required />
+            </div>
+
+            <!-- Work Email -->
+            <div class="form-group">
+              <label for="work_email">Work email <span class="required-star">*</span></label>
+              <input type="email" id="work_email" class="form-control" placeholder="e.g., John.doe@company.com" required />
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+              <label for="department">Department <span class="required-star">*</span></label>
+              <input type="text" id="department" class="form-control" placeholder="e.g., IT" required />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label for="phone_number">Phone number</label>
+              <input type="tel" id="phone_number" class="form-control" placeholder="e.g., 0800000012" />
+            </div>
+
+            <!-- Preferred Method of Contact -->
+            <div class="form-group">
+              <label>Preferred method of contact</label>
+              <div class="custom-dropdown" data-dropdown="contact_method">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">select</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="Whatsapp">Whatsapp</div>
+                  <div class="dropdown-item" data-value="Phone call">Phone call</div>
+                  <div class="dropdown-item" data-value="Text">Text</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="form-group full-width checkboxes-group">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="is_decision_maker" />
+                <span class="checkmark"></span>
+                <span class="checkbox-text">I am the primary decision maker.</span>
+              </label>
+
+              <label class="custom-checkbox">
+                <input type="checkbox" id="is_evaluating" />
+                <span class="checkmark"></span>
+                <span class="checkbox-text">I am evaluating ERP on behalf of my organization.</span>
+              </label>
+            </div>
+          </form>
+
+          <div class="pane-actions split-actions">
+            <button type="button" class="btn-outline" data-prev-step="1">Back</button>
+            <button type="button" class="btn-primary" data-next-step="3">Continue</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 3: ERP REQUIREMENTS ==================== -->
+        <div class="step-pane" data-step="3">
+          <div class="pane-header">
+            <h2>Tell us about your ERP Requirements.</h2>
+            <p>This information helps us tailor the consultation to your specific business requirements.</p>
+          </div>
+
+          <div class="requirements-wrapper">
+            <!-- Current Business Situation -->
+            <div class="section-block">
+              <label class="section-title">Current Business Situation</label>
+              <div class="radio-card-grid">
+                <label class="selection-card">
+                  <input type="radio" name="business_situation" value="Spreadsheet" />
+                  <span class="card-text">Spreadsheet</span>
+                  <span class="radio-indicator"></span>
+                </label>
+
+                <label class="selection-card">
+                  <input type="radio" name="business_situation" value="No System" />
+                  <span class="card-text">No System</span>
+                  <span class="radio-indicator"></span>
+                </label>
+
+                <label class="selection-card">
+                  <input type="radio" name="business_situation" value="Multiple systems" />
+                  <span class="card-text">Multiple systems</span>
+                  <span class="radio-indicator"></span>
+                </label>
+
+                <label class="selection-card">
+                  <input type="radio" name="business_situation" value="Another ERP" />
+                  <span class="card-text">Another ERP</span>
+                  <span class="radio-indicator"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Modules Needed -->
+            <div class="section-block">
+              <label class="section-title">Modules Needed</label>
+              <div class="module-pills-grid">
+                <button type="button" class="module-pill" data-module="Recruitment">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </span>
+                  Recruitment
+                </button>
+
+                <button type="button" class="module-pill selected" data-module="Employee">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  Employee
+                </button>
+
+                <button type="button" class="module-pill" data-module="Time & Attendance">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  Time & attend...
+                </button>
+
+                <button type="button" class="module-pill" data-module="Timesheet">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  </span>
+                  Timesheet
+                </button>
+
+                <button type="button" class="module-pill" data-module="Leave & Time Off">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                  </span>
+                  Leave & time off
+                </button>
+
+                <button type="button" class="module-pill" data-module="Payroll">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  </span>
+                  Payroll
+                </button>
+
+                <button type="button" class="module-pill" data-module="Appraisal">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </span>
+                  Appraisal
+                </button>
+
+                <button type="button" class="module-pill" data-module="Dashboard">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+                  </span>
+                  Dashboard
+                </button>
+
+                <button type="button" class="module-pill" data-module="Purchase">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  </span>
+                  Purchase
+                </button>
+
+                <button type="button" class="module-pill selected" data-module="Sales">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </span>
+                  Sales...
+                </button>
+
+                <button type="button" class="module-pill" data-module="Invoicing">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  </span>
+                  Invoicing
+                </button>
+
+                <button type="button" class="module-pill selected" data-module="Point of Sale">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  </span>
+                  Point of s...
+                </button>
+
+                <button type="button" class="module-pill" data-module="Income tax">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                  </span>
+                  Income tax
+                </button>
+
+                <button type="button" class="module-pill" data-module="Final Accounts">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  </span>
+                  Final account...
+                </button>
+
+                <button type="button" class="module-pill" data-module="Company Income Tax">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-3"/></svg>
+                  </span>
+                  Company inc...
+                </button>
+
+                <button type="button" class="module-pill" data-module="Capital Gains Tax">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                  </span>
+                  Capital gains ta...
+                </button>
+
+                <button type="button" class="module-pill" data-module="Approval">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  </span>
+                  Approval
+                </button>
+
+                <button type="button" class="module-pill" data-module="Capital Allowance">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  </span>
+                  Capital allowance
+                </button>
+
+                <button type="button" class="module-pill" data-module="VAT Returns">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  </span>
+                  VAT returns
+                </button>
+
+                <button type="button" class="module-pill" data-module="Field Service">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  </span>
+                  Field service
+                </button>
+
+                <button type="button" class="module-pill" data-module="Projects">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  </span>
+                  Projects
+                </button>
+
+                <button type="button" class="module-pill" data-module="Inventory">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  </span>
+                  Inventory
+                </button>
+
+                <button type="button" class="module-pill" data-module="Discuss">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </span>
+                  Discuss
+                </button>
+
+                <button type="button" class="module-pill" data-module="Document">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                  </span>
+                  Document
+                </button>
+
+                <button type="button" class="module-pill selected" data-module="Manufacturing">
+                  <span class="pill-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg>
+                  </span>
+                  Manufacturing
+                </button>
+              </div>
+            </div>
+
+            <!-- Current Challenges -->
+            <div class="section-block">
+              <label class="section-title">Current Challenges</label>
+              <div class="challenge-chips-wrap">
+                <button type="button" class="challenge-chip selected" data-challenge="Manual Processes">Manual Processes</button>
+                <button type="button" class="challenge-chip selected" data-challenge="Data fragmentation">Data fragmentation</button>
+                <button type="button" class="challenge-chip" data-challenge="Inaccurate Inventory">Inaccurate Inventory</button>
+                <button type="button" class="challenge-chip" data-challenge="Process inconsistency">Process inconsistency</button>
+                <button type="button" class="challenge-chip" data-challenge="Slow order fulfillment">Slow order fulfillment</button>
+                <button type="button" class="challenge-chip" data-challenge="Delayed reporting">Delayed reporting</button>
+                <button type="button" class="challenge-chip" data-challenge="Poor Data accuracy">Poor Data accuracy</button>
+                <button type="button" class="challenge-chip" data-challenge="Lack of real-time insights">Lack of real-time insights</button>
+                <button type="button" class="challenge-chip" data-challenge="Forecasting guesswork">Forecasting guesswork</button>
+                <button type="button" class="challenge-chip" data-challenge="System sprawl">System sprawl</button>
+                <button type="button" class="challenge-chip" data-challenge="Tax regulatory non-compliance">Tax regulatory non-compliance</button>
+                <button type="button" class="challenge-chip" data-challenge="Data security vulnerabilities">Data security vulnerabilities</button>
+                <button type="button" class="challenge-chip" data-challenge="Inability to scale">Inability to scale</button>
+                <button type="button" class="challenge-chip" data-challenge="Poor customer service">Poor customer service</button>
+                <button type="button" class="challenge-chip" data-challenge="Supply Chain Gaps">Supply Chain Gaps</button>
+              </div>
+            </div>
+
+            <!-- Implementation timeline & Budget (Optional) -->
+            <div class="form-grid">
+              <!-- Implementation timeline Dropdown -->
+              <div class="form-group">
+                <label>Implementation timeline</label>
+                <div class="custom-dropdown" data-dropdown="timeline">
+                  <button type="button" class="dropdown-trigger">
+                    <span class="selected-text placeholder">select</span>
+                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-item" data-value="4 weeks">4 weeks</div>
+                    <div class="dropdown-item" data-value="6 weeks">6 weeks</div>
+                    <div class="dropdown-item" data-value="8 weeks">8 weeks</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Budget Dropdown -->
+              <div class="form-group">
+                <label>Budget (Optional)</label>
+                <div class="custom-dropdown" data-dropdown="budget">
+                  <button type="button" class="dropdown-trigger">
+                    <span class="selected-text placeholder">select</span>
+                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-item" data-value="200k">200k</div>
+                    <div class="dropdown-item" data-value="500k">500k</div>
+                    <div class="dropdown-item" data-value="600k">600k</div>
+                    <div class="dropdown-item" data-value="900k">900k</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pane-actions split-actions">
+            <button type="button" class="btn-outline" data-prev-step="2">Back</button>
+            <button type="button" class="btn-primary" data-next-step="4">Continue</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 4: SCHEDULE ==================== -->
+        <div class="step-pane" data-step="4">
+          <div class="pane-header">
+            <h2>Book a discovery session</h2>
+            <p>Select a convenient time for a detailed consultation with our ERP experts.</p>
+          </div>
+
+          <div class="schedule-grid">
+            <!-- CALENDAR PICKER LEFT -->
+            <div class="calendar-card">
+              <div class="calendar-header">
+                <span class="month-title" id="cal-month-title">October 2026</span>
+                <div class="cal-arrows">
+                  <button type="button" class="cal-nav-btn" id="cal-prev" aria-label="Previous Month">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  </button>
+                  <button type="button" class="cal-nav-btn" id="cal-next" aria-label="Next Month">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="calendar-body">
+                <div class="weekdays-row">
+                  <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                </div>
+                <div class="days-grid" id="cal-days-grid">
+                  <!-- Dynamic JS Calendar Days -->
+                </div>
+              </div>
+            </div>
+
+            <!-- SLOTS & PLATFORM RIGHT -->
+            <div class="slots-card">
+              <div class="slots-section">
+                <label class="section-title">Available Slots</label>
+                <div class="time-slots-list">
+                  <button type="button" class="time-slot-btn" data-time="10:00 AM">10:00 AM</button>
+                  <button type="button" class="time-slot-btn selected" data-time="11:30 AM">11:30 AM</button>
+                  <button type="button" class="time-slot-btn" data-time="2:00 PM">2:00 PM</button>
+                  <button type="button" class="time-slot-btn" data-time="4:30 PM">4:30 PM</button>
+                </div>
+              </div>
+
+              <div class="platform-section">
+                <label class="section-title">Meeting Platform</label>
+                <div class="platform-chips-grid">
+                  <button type="button" class="platform-btn selected" data-platform="Google Meet">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                    Google Meet
+                  </button>
+
+                  <button type="button" class="platform-btn" data-platform="In-person">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    In-person
+                  </button>
+
+                  <button type="button" class="platform-btn" data-platform="MS Teams">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                    MS Teams
+                  </button>
+
+                  <button type="button" class="platform-btn" data-platform="Phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Phone
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pane-actions split-actions">
+            <button type="button" class="btn-outline" data-prev-step="3">Back</button>
+            <button type="button" class="btn-primary" data-next-step="5">Continue</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 5: REVIEW YOUR INFORMATION ==================== -->
+        <div class="step-pane" data-step="5">
+          <div class="pane-header">
+            <h2>Review your information</h2>
+            <p>Please check all details before submitting your consultation request.</p>
+          </div>
+
+          <div class="review-cards-grid">
+            <!-- Company Info Card -->
+            <div class="review-card">
+              <div class="card-top-header">
+                <span class="card-title-text">Company Info</span>
+                <button type="button" class="card-edit-btn" id="edit-company-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  Edit
+                </button>
+              </div>
+              <div class="card-info-cols">
+                <div class="info-item">
+                  <span class="info-lbl">Company Name</span>
+                  <strong class="info-val" id="rev-company-name">Acme Corporation</strong>
+                </div>
+                <div class="info-item">
+                  <span class="info-lbl">Industry</span>
+                  <strong class="info-val" id="rev-industry">Manufacturing</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Contact Card -->
+            <div class="review-card">
+              <div class="card-top-header">
+                <span class="card-title-text">Primary Contact</span>
+                <button type="button" class="card-edit-btn" id="edit-contact-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  Edit
+                </button>
+              </div>
+              <div class="card-info-cols">
+                <div class="info-item">
+                  <span class="info-lbl">Name</span>
+                  <strong class="info-val" id="rev-contact-name">John Doe</strong>
+                </div>
+                <div class="info-item">
+                  <span class="info-lbl">Email</span>
+                  <strong class="info-val" id="rev-contact-email">john@acme.com</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- ERP Requirements Card -->
+            <div class="review-card">
+              <div class="card-top-header">
+                <span class="card-title-text">ERP Requirements</span>
+                <button type="button" class="card-edit-btn" id="edit-erp-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  Edit
+                </button>
+              </div>
+              <div class="card-info-single">
+                <span class="info-lbl">Requested Modules</span>
+                <div class="mod-tags-list" id="rev-modules-list">
+                  <span class="mod-tag">Finance</span>
+                  <span class="mod-tag">Sales</span>
+                  <span class="mod-tag">CRM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Meeting Details Card -->
+            <div class="review-card">
+              <div class="card-top-header">
+                <span class="card-title-text">Meeting Details</span>
+                <button type="button" class="card-edit-btn" id="edit-meeting-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  Edit
+                </button>
+              </div>
+              <div class="meeting-detail-row">
+                <svg class="meeting-cal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span id="rev-meeting-str">Thursday, Oct 24 • 11:30 AM (Google Meet)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pane-actions split-actions">
+            <button type="button" class="btn-outline" data-prev-step="4">Back</button>
+            <button type="button" class="btn-primary" data-next-step="6">Submit Consultation Request</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 6: DONE CONFIRMATION ==================== -->
+        <div class="step-pane" data-step="6">
+          <div class="done-confirmation-box">
+            <div class="done-checkmark-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h2>Your ERP consultation has been scheduled</h2>
+            <p class="done-subtitle">
+              Thank you! We've received your request and sent a confirmation email to <strong id="done-user-email">john@acme.com</strong> with the calendar invite and meeting link.
+            </p>
+
+            <div class="meeting-recap-card">
+              <span class="recap-title">Meeting Recap</span>
+              <div class="recap-items-list">
+                <div class="recap-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span id="done-date-str">Thursday, October 24, 2026</span>
+                </div>
+                <div class="recap-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span id="done-time-str">11:30 AM - 12:30 PM</span>
+                </div>
+                <div class="recap-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  <span id="done-platform-str">Google Meet</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="done-actions">
+              <a href="index.html" class="btn-primary">Back to website</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ==================== EDIT MODALS SYSTEM ==================== -->
+  <!-- 1. EDIT COMPANY INFO MODAL -->
+  <div class="modal-backdrop" id="modal-company">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Edit Company Info</h3>
+        <button type="button" class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="modal_company_name">Company Name</label>
+          <input type="text" id="modal_company_name" class="form-control" value="Acme Corporation" />
+        </div>
+        <div class="form-group">
+          <label>Industry</label>
+          <div class="custom-dropdown" data-dropdown="modal_industry">
+            <button type="button" class="dropdown-trigger">
+              <span class="selected-text" id="modal_industry_val">Manufacturing</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="dropdown-menu">
+              <div class="dropdown-item" data-value="Manufacturing">Manufacturing</div>
+              <div class="dropdown-item" data-value="Logistics">Logistics</div>
+              <div class="dropdown-item" data-value="Technology">Technology</div>
+              <div class="dropdown-item" data-value="Healthcare">Healthcare</div>
+              <div class="dropdown-item" data-value="Agriculture">Agriculture</div>
+              <div class="dropdown-item" data-value="Other">Other</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
+        <button type="button" class="btn-primary" id="save-company-btn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. EDIT PRIMARY CONTACT MODAL -->
+  <div class="modal-backdrop" id="modal-contact">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Edit Primary Contact</h3>
+        <button type="button" class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="modal_contact_name">Full Name</label>
+          <input type="text" id="modal_contact_name" class="form-control" value="John Doe" />
+        </div>
+        <div class="form-group">
+          <label for="modal_contact_email">Work Email</label>
+          <input type="email" id="modal_contact_email" class="form-control" value="john@acme.com" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
+        <button type="button" class="btn-primary" id="save-contact-btn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. EDIT ERP REQUIREMENTS MODAL -->
+  <div class="modal-backdrop" id="modal-erp">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Edit ERP Requirements</h3>
+        <button type="button" class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Select Required Modules</label>
+          <div class="modal-pills-grid" id="modal-modules-wrap">
+            <button type="button" class="module-pill selected" data-module="Discuss">Discuss</button>
+            <button type="button" class="module-pill selected" data-module="Approvals">Approvals</button>
+            <button type="button" class="module-pill selected" data-module="Capital Allowance">Capital Allowance</button>
+            <button type="button" class="module-pill" data-module="Field service">Field service</button>
+            <button type="button" class="module-pill" data-module="Inventory">Inventory</button>
+            <button type="button" class="module-pill" data-module="VAT Returns">VAT Returns</button>
+            <button type="button" class="module-pill" data-module="Expense">Expense</button>
+            <button type="button" class="module-pill" data-module="Accounting">Accounting</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
+        <button type="button" class="btn-primary" id="save-erp-btn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. EDIT MEETING DETAILS MODAL -->
+  <div class="modal-backdrop" id="modal-meeting">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Edit Meeting Details</h3>
+        <button type="button" class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="modal_date_val">Preferred Date</label>
+          <div class="input-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <input type="text" id="modal_date_val" class="form-control" value="Thursday, Oct 24" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="modal_time_val">Preferred Time</label>
+          <div class="input-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <input type="text" id="modal_time_val" class="form-control" value="11:30 AM" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Meeting Platform</label>
+          <div class="custom-dropdown" data-dropdown="modal_platform">
+            <button type="button" class="dropdown-trigger">
+              <span class="selected-text" id="modal_platform_val">Google Meet</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="dropdown-menu">
+              <div class="dropdown-item" data-value="Google Meet">Google Meet</div>
+              <div class="dropdown-item" data-value="In-person">In-person</div>
+              <div class="dropdown-item" data-value="MS Teams">MS Teams</div>
+              <div class="dropdown-item" data-value="Phone">Phone</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
+        <button type="button" class="btn-primary" id="save-meeting-btn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
