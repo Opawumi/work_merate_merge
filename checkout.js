@@ -41,11 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // DOM Elements
   const stepPanes = document.querySelectorAll('.step-pane');
   const stepperItems = document.querySelectorAll('.stepper-item');
+  let currentStep = 1;
 
   // ==================== STEPPER NAVIGATION ====================
   function goToStep(stepNumber) {
     const target = parseInt(stepNumber, 10);
     if (isNaN(target) || target < 1 || target > 6) return;
+    currentStep = target;
 
     // Update Panes
     stepPanes.forEach(pane => {
@@ -71,12 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Step Connectors (broken thin dashed lines turn green up to current step)
     const connectors = document.querySelectorAll('.step-connector');
     connectors.forEach((conn, index) => {
-      if (index < target) {
+      if (index < target - 1) {
         conn.classList.add('completed');
       } else {
         conn.classList.remove('completed');
       }
     });
+
+    // Update Mobile Sub-Header
+    const mobileBackText = document.getElementById('mobile-back-text');
+    const mobileBackBtn = document.getElementById('mobile-back-btn');
+    const mobileStepCounter = document.getElementById('mobile-step-counter');
+    if (mobileStepCounter) {
+      mobileStepCounter.textContent = target === 6 ? 'Done' : `Step ${target} of 6`;
+    }
+    if (mobileBackText && mobileBackBtn) {
+      if (target === 1) {
+        mobileBackText.textContent = 'Back to Pricing';
+        mobileBackBtn.setAttribute('href', 'pricing.html');
+      } else {
+        mobileBackText.textContent = 'Back';
+        mobileBackBtn.setAttribute('href', '#');
+      }
+    }
 
     // Toggle "Back to Pricing" button visibility (ONLY on Company Detail step 1)
     const sidebarFooter = document.querySelector('.sidebar-footer');
@@ -106,6 +125,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize flow on Step 1
   goToStep(1);
+
+  // Mobile Back Button Handler
+  const mobileBackBtn = document.getElementById('mobile-back-btn');
+  if (mobileBackBtn) {
+    mobileBackBtn.addEventListener('click', (e) => {
+      if (currentStep > 1) {
+        e.preventDefault();
+        goToStep(currentStep - 1);
+      }
+    });
+  }
 
   // Next Buttons
   document.querySelectorAll('[data-next-step]').forEach(btn => {

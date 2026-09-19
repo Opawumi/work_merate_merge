@@ -63,6 +63,17 @@
         </a>
       </div>
 
+      <!-- MOBILE SUB-HEADER BAR (Visible on mobile screens) -->
+      <div class="mobile-sub-header">
+        <a href="pricing.html" class="mobile-back-btn" id="mobile-back-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span id="mobile-back-text">Back to Pricing</span>
+        </a>
+        <span class="mobile-step-counter" id="mobile-step-counter">Step 1 of 6</span>
+      </div>
+
       <!-- STEPPER LIST -->
       <nav class="stepper-nav">
         <ul class="stepper-list">
@@ -125,122 +136,114 @@
           </div>
 
           <form id="step1-form" class="step1-layout-grid">
-            <!-- LEFT COLUMN -->
-            <div class="step1-col">
-              <!-- Company Name -->
-              <div class="form-group">
-                <label for="company_name">Company Name <span class="required-star">*</span></label>
-                <input type="text" id="company_name" class="form-control" placeholder="e.g. Acme Corporation"
-                  required />
-              </div>
+            <!-- 1. Company Name -->
+            <div class="form-group step1-group-company">
+              <label for="company_name">Company Name <span class="required-star">*</span></label>
+              <input type="text" id="company_name" class="form-control" placeholder="e.g. Acme Corporation" required />
+            </div>
 
-              <!-- Business Type Dropdown -->
-              <div class="form-group">
-                <label>Business Type</label>
-                <div class="custom-dropdown" data-dropdown="business_type">
-                  <button type="button" class="dropdown-trigger">
-                    <span class="selected-text placeholder">select type</span>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-item" data-value="Limited Liability Company (LLC)">Limited Liability Company
-                      (LLC)</div>
-                    <div class="dropdown-item" data-value="Partnership">Partnership</div>
-                    <div class="dropdown-item" data-value="Sole proprietorship">Sole proprietorship</div>
-                    <div class="dropdown-item" data-value="Corporation">Corporation</div>
-                  </div>
+            <!-- 2. Industry Dropdown -->
+            <div class="form-group step1-group-industry">
+              <label>Industry</label>
+              <div class="custom-dropdown" data-dropdown="industry">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">Select industry</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="Agriculture">Agriculture</div>
+                  <div class="dropdown-item" data-value="Construction">Construction</div>
+                  <div class="dropdown-item" data-value="Education">Education</div>
+                  <div class="dropdown-item" data-value="Government">Government</div>
+                  <div class="dropdown-item" data-value="Healthcare">Healthcare</div>
+                  <div class="dropdown-item" data-value="Hospitality">Hospitality</div>
+                  <div class="dropdown-item" data-value="Logistics">Logistics</div>
+                  <div class="dropdown-item" data-value="Manufacturing">Manufacturing</div>
+                  <div class="dropdown-item" data-value="Technology">Technology</div>
+                  <div class="dropdown-item" data-value="Other">Other</div>
                 </div>
-              </div>
-
-              <!-- Country Dropdown -->
-              <div class="form-group">
-                <label>Country</label>
-                <div class="custom-dropdown" data-dropdown="country">
-                  <button type="button" class="dropdown-trigger">
-                    <span class="selected-text placeholder">Select country</span>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-item" data-value="Nigeria">Nigeria</div>
-                    <div class="dropdown-item" data-value="Ghana">Ghana</div>
-                    <div class="dropdown-item" data-value="Kenya">Kenya</div>
-                    <div class="dropdown-item" data-value="South Africa">South Africa</div>
-                    <div class="dropdown-item" data-value="United States">United States</div>
-                    <div class="dropdown-item" data-value="United Kingdom">United Kingdom</div>
-                    <div class="dropdown-item" data-value="Canada">Canada</div>
-                    <div class="dropdown-item" data-value="Other">Other</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Company website -->
-              <div class="form-group">
-                <label for="website">Company website (optional)</label>
-                <input type="url" id="website" class="form-control" placeholder="https://www.company.com" />
               </div>
             </div>
 
-            <!-- RIGHT COLUMN -->
-            <div class="step1-col">
-              <!-- Industry Dropdown -->
-              <div class="form-group">
-                <label>Industry</label>
-                <div class="custom-dropdown" data-dropdown="industry">
-                  <button type="button" class="dropdown-trigger">
-                    <span class="selected-text placeholder">Select industry</span>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-item" data-value="Agriculture">Agriculture</div>
-                    <div class="dropdown-item" data-value="Construction">Construction</div>
-                    <div class="dropdown-item" data-value="Education">Education</div>
-                    <div class="dropdown-item" data-value="Government">Government</div>
-                    <div class="dropdown-item" data-value="Healthcare">Healthcare</div>
-                    <div class="dropdown-item" data-value="Hospitality">Hospitality</div>
-                    <div class="dropdown-item" data-value="Logistics">Logistics</div>
-                    <div class="dropdown-item" data-value="Manufacturing">Manufacturing</div>
-                    <div class="dropdown-item" data-value="Technology">Technology</div>
-                    <div class="dropdown-item" data-value="Other">Other</div>
-                  </div>
+            <!-- 3. Business Type Dropdown -->
+            <div class="form-group step1-group-type">
+              <label>Business Type</label>
+              <div class="custom-dropdown" data-dropdown="business_type">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">select type</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="Limited Liability Company (LLC)">Limited Liability Company (LLC)</div>
+                  <div class="dropdown-item" data-value="Partnership">Partnership</div>
+                  <div class="dropdown-item" data-value="Sole proprietorship">Sole proprietorship</div>
+                  <div class="dropdown-item" data-value="Corporation">Corporation</div>
                 </div>
               </div>
+            </div>
 
-              <!-- Number of Employees Dropdown -->
-              <div class="form-group">
-                <label>Number of Employees</label>
-                <div class="custom-dropdown" data-dropdown="employees">
-                  <button type="button" class="dropdown-trigger">
-                    <span class="selected-text placeholder">Select range</span>
-                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-item" data-value="1 - 10">1 - 10</div>
-                    <div class="dropdown-item" data-value="11 - 50">11 - 50</div>
-                    <div class="dropdown-item" data-value="51 - 200">51 - 200</div>
-                    <div class="dropdown-item" data-value="201 - 500">201 - 500</div>
-                    <div class="dropdown-item" data-value="500+">500+</div>
-                  </div>
+            <!-- 4. Number of Employees Dropdown -->
+            <div class="form-group step1-group-employees">
+              <label>Number of Employees</label>
+              <div class="custom-dropdown" data-dropdown="employees">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">Select range</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="1 - 10">1 - 10</div>
+                  <div class="dropdown-item" data-value="11 - 50">11 - 50</div>
+                  <div class="dropdown-item" data-value="51 - 200">51 - 200</div>
+                  <div class="dropdown-item" data-value="201 - 500">201 - 500</div>
+                  <div class="dropdown-item" data-value="500+">500+</div>
                 </div>
               </div>
+            </div>
 
-              <!-- State / City -->
-              <div class="form-group">
-                <label for="state_city">State / City</label>
-                <input type="text" id="state_city" class="form-control" placeholder="e.g. Texas, Austin" />
+            <!-- 5. Country Dropdown -->
+            <div class="form-group step1-group-country">
+              <label>Country</label>
+              <div class="custom-dropdown" data-dropdown="country">
+                <button type="button" class="dropdown-trigger">
+                  <span class="selected-text placeholder">Select country</span>
+                  <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item" data-value="Nigeria">Nigeria</div>
+                  <div class="dropdown-item" data-value="Ghana">Ghana</div>
+                  <div class="dropdown-item" data-value="Kenya">Kenya</div>
+                  <div class="dropdown-item" data-value="South Africa">South Africa</div>
+                  <div class="dropdown-item" data-value="United States">United States</div>
+                  <div class="dropdown-item" data-value="United Kingdom">United Kingdom</div>
+                  <div class="dropdown-item" data-value="Canada">Canada</div>
+                  <div class="dropdown-item" data-value="Other">Other</div>
+                </div>
               </div>
+            </div>
 
-              <!-- Action Button at bottom right of form -->
-              <div class="step1-actions-wrap">
-                <button type="button" class="btn-continue-olive" data-next-step="2">Continue</button>
-              </div>
+            <!-- 6. State / City -->
+            <div class="form-group step1-group-state">
+              <label for="state_city">State / City</label>
+              <input type="text" id="state_city" class="form-control" placeholder="e.g. Texas, Austin" />
+            </div>
+
+            <!-- 7. Company website -->
+            <div class="form-group step1-group-website">
+              <label for="website">Company website (optional)</label>
+              <input type="url" id="website" class="form-control" placeholder="https://www.company.com" />
+            </div>
+
+            <!-- 8. Action Button -->
+            <div class="step1-actions-wrap">
+              <button type="button" class="btn-continue-olive" data-next-step="2">Continue</button>
             </div>
           </form>
         </div>
@@ -307,13 +310,13 @@
               <label class="custom-checkbox">
                 <input type="checkbox" id="is_decision_maker" />
                 <span class="checkmark"></span>
-                <span class="checkbox-text">I am the primary decision maker.</span>
+                <span class="checkbox-text">I am the primary decision maker</span>
               </label>
 
               <label class="custom-checkbox">
                 <input type="checkbox" id="is_evaluating" />
                 <span class="checkmark"></span>
-                <span class="checkbox-text">I am evaluating ERP on behalf of my organization.</span>
+                <span class="checkbox-text">I am evaluating ERP on behalf of my organization</span>
               </label>
             </div>
           </form>
@@ -971,6 +974,7 @@
   <!-- 1. EDIT COMPANY INFO MODAL -->
   <div class="modal-backdrop" id="modal-company">
     <div class="modal-box">
+      <div class="modal-drag-handle"></div>
       <div class="modal-header">
         <h3>Edit Company Info</h3>
         <button type="button" class="modal-close" data-modal-close>&times;</button>
@@ -1001,8 +1005,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
         <button type="button" class="btn-primary" id="save-company-btn">Save Changes</button>
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
       </div>
     </div>
   </div>
@@ -1010,6 +1014,7 @@
   <!-- 2. EDIT PRIMARY CONTACT MODAL -->
   <div class="modal-backdrop" id="modal-contact">
     <div class="modal-box">
+      <div class="modal-drag-handle"></div>
       <div class="modal-header">
         <h3>Edit Primary Contact</h3>
         <button type="button" class="modal-close" data-modal-close>&times;</button>
@@ -1029,8 +1034,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
         <button type="button" class="btn-primary" id="save-contact-btn">Save Changes</button>
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
       </div>
     </div>
   </div>
@@ -1038,6 +1043,7 @@
   <!-- 3. EDIT ERP REQUIREMENTS MODAL -->
   <div class="modal-backdrop" id="modal-erp">
     <div class="modal-box">
+      <div class="modal-drag-handle"></div>
       <div class="modal-header">
         <h3>Edit ERP Requirements</h3>
         <button type="button" class="modal-close" data-modal-close>&times;</button>
@@ -1059,8 +1065,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
         <button type="button" class="btn-primary" id="save-erp-btn">Save Changes</button>
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
       </div>
     </div>
   </div>
@@ -1068,6 +1074,7 @@
   <!-- 4. EDIT MEETING DETAILS MODAL -->
   <div class="modal-backdrop" id="modal-meeting">
     <div class="modal-box">
+      <div class="modal-drag-handle"></div>
       <div class="modal-header">
         <h3>Edit Meeting Details</h3>
         <button type="button" class="modal-close" data-modal-close>&times;</button>
@@ -1114,8 +1121,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
         <button type="button" class="btn-primary" id="save-meeting-btn">Save Changes</button>
+        <button type="button" class="btn-outline" data-modal-close>Cancel</button>
       </div>
     </div>
   </div>
