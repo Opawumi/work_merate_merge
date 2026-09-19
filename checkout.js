@@ -68,6 +68,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Update Step Connectors (broken thin dashed lines turn green up to current step)
+    const connectors = document.querySelectorAll('.step-connector');
+    connectors.forEach((conn, index) => {
+      if (index < target) {
+        conn.classList.add('completed');
+      } else {
+        conn.classList.remove('completed');
+      }
+    });
+
+    // Toggle "Back to Pricing" button visibility (ONLY on Company Detail step 1)
+    const sidebarFooter = document.querySelector('.sidebar-footer');
+    if (sidebarFooter) {
+      if (target === 1) {
+        sidebarFooter.classList.remove('hidden');
+        sidebarFooter.style.display = 'block';
+      } else {
+        sidebarFooter.classList.add('hidden');
+        sidebarFooter.style.display = 'none';
+      }
+    }
+
     // Update Review Summary if entering Step 5
     if (target === 5) {
       updateReviewSummary();
@@ -81,6 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll to top of main box
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  // Initialize flow on Step 1
+  goToStep(1);
 
   // Next Buttons
   document.querySelectorAll('[data-next-step]').forEach(btn => {
