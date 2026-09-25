@@ -96,15 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 6. Automatically bind to all "Request Demo" buttons and "Request Demo" buttons
-  // This looks for links to signup.html and the specific ID of your hero button
+  // 6. Automatically bind to all "Request Demo" buttons and elements
   const triggerElements = document.querySelectorAll(
-    'a[href="signup.html"], #requestDemoBtn',
+    '#requestDemoBtn, .request-demo-trigger, [data-request-demo], a[href="#request-demo"], a[href="#requestDemo"]'
   );
 
   triggerElements.forEach((trigger) => {
     trigger.addEventListener("click", (e) => {
-      e.preventDefault(); // Stops the browser from navigating to signup.html
+      e.preventDefault();
       openModal();
     });
   });

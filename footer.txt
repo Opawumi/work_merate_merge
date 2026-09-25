@@ -52,9 +52,9 @@
               <strong>USA Customer Support:</strong><br />(+1) 256 441 3090
             </p>
             <p>
-              <strong>NGA Customer Support:</strong><br />(+234) 907 713 7167
+              <strong>NGA Customer Support:</strong><br />(+234) 907 713 7167; 0803 601 4972
             </p>
-            <p><strong>Email:</strong><br />support@workmerate.ng.com</p>
+            <p><strong>Email:</strong><br />support@workmeraterp.com.ng</p>
           </div>
           <div class="footer-socials" aria-label="Social links">
             <a href="https://www.facebook.com/share/17YDPvmUe6/?mibextid=wwXIfr" class="social-icon" aria-label="Facebook">
@@ -170,7 +170,7 @@
       <hr />
       <div class="footer-bottom">
         <div class="badges">
-          <!-- <p>&copy; 2025 WorkMerate - All rights reserved</p> -->
+          <!-- <p>&copy; 2026 WorkMerate - All rights reserved</p> -->
           <div class="year d-flex">
             <div>�</div>
             <div id="current-year"></div>

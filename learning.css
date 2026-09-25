@@ -44,11 +44,10 @@ img {
   display: block;
 }
 
-/* Utilities */
 .learning_container {
   max-width: 1240px;
-  margin: 0 96px;
-  padding: 0 0;
+  margin: 0 auto;
+  padding: 0 48px;
 }
 
 .section-padding {
@@ -204,7 +203,8 @@ img {
 }
 
 .hero-content {
-  width: 710px;
+  max-width: 710px;
+  width: 100%;
   position: relative;
   z-index: 2;
   display: grid;
@@ -510,7 +510,8 @@ h1 {
 }
 
 .cta-banner p {
-  width: 810px;
+  max-width: 810px;
+  width: 100%;
   color: #121212;
   font-size: 18px;
   font-style: normal;
@@ -602,6 +603,10 @@ h1 {
 
 /* Responsive */
 @media (max-width: 992px) {
+  .learning_container {
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
   .nav-menu,
   .nav-actions {
@@ -610,6 +615,39 @@ h1 {
 
   .hamburger {
     display: flex;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta-banner {
+    padding: 40px 24px;
+    text-align: center;
+    border-radius: 16px;
+  }
+
+  .cta-banner h2 {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .cta-banner p {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 auto 24px;
+    text-align: center;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
 
   .equal-height-row {
